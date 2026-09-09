@@ -1,0 +1,1254 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Siete Días en Chicago</title>
+<meta name="description" content="Itinerario, la vaca y el clima para siete días en Chicago.">
+<meta name="theme-color" content="#0A1620">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Chicago">
+<meta name="robots" content="noindex,nofollow">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;800&family=Karla:ital,wght@0,400;0,600;0,800;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --bg:#E7ECEE;
+  --surface:#FFFFFF;
+  --surface-2:#F1F5F6;
+  --surface-3:#E1E9EC;
+  --line:#C4D2D8;
+  --line-soft:#DAE4E8;
+  --text:#0F2331;
+  --text-2:#37596E;
+  --muted:#63808F;
+  --brass:#996D14;
+  --brass-soft:#F0E2C4;
+  --lake:#0F6E93;
+  --lake-soft:#D5E9F1;
+  --star:#B62A2A;
+  --star-soft:#F7DFDF;
+  --good:#1A6C55;
+  --good-soft:#D6EDE5;
+  --sky-1:#123047;
+  --sky-2:#2C5B72;
+  --sky-3:#7FA0AE;
+  --hero-ink:#F2F7F9;
+  --shadow:0 1px 2px rgba(15,35,49,.06), 0 8px 24px -12px rgba(15,35,49,.22);
+  --shadow-lift:0 2px 4px rgba(15,35,49,.08), 0 18px 40px -18px rgba(15,35,49,.34);
+  --r:14px;
+  --fd:"Big Shoulders Display", "Haettenschweiler", "Arial Narrow", sans-serif;
+  --fb:"Karla", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fm:"IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#08131C;
+    --surface:#102431;
+    --surface-2:#16303F;
+    --surface-3:#1D3C4D;
+    --line:#25495C;
+    --line-soft:#1B3A4A;
+    --text:#E7F1F5;
+    --text-2:#B4CBD6;
+    --muted:#84A2B1;
+    --brass:#E5BC5E;
+    --brass-soft:#3A2F13;
+    --lake:#63C4EA;
+    --lake-soft:#0E3346;
+    --star:#F5736D;
+    --star-soft:#3D1B1B;
+    --good:#57D3A6;
+    --good-soft:#0F3A2E;
+    --sky-1:#050D14;
+    --sky-2:#12303F;
+    --sky-3:#3E6577;
+    --hero-ink:#EAF4F8;
+    --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 26px -14px rgba(0,0,0,.7);
+    --shadow-lift:0 2px 6px rgba(0,0,0,.4), 0 20px 44px -20px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#08131C;
+  --surface:#102431;
+  --surface-2:#16303F;
+  --surface-3:#1D3C4D;
+  --line:#25495C;
+  --line-soft:#1B3A4A;
+  --text:#E7F1F5;
+  --text-2:#B4CBD6;
+  --muted:#84A2B1;
+  --brass:#E5BC5E;
+  --brass-soft:#3A2F13;
+  --lake:#63C4EA;
+  --lake-soft:#0E3346;
+  --star:#F5736D;
+  --star-soft:#3D1B1B;
+  --good:#57D3A6;
+  --good-soft:#0F3A2E;
+  --sky-1:#050D14;
+  --sky-2:#12303F;
+  --sky-3:#3E6577;
+  --hero-ink:#EAF4F8;
+  --shadow:0 1px 2px rgba(0,0,0,.35), 0 10px 26px -14px rgba(0,0,0,.7);
+  --shadow-lift:0 2px 6px rgba(0,0,0,.4), 0 20px 44px -20px rgba(0,0,0,.8);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--fb);
+  font-size:15px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+input,select,textarea{font:inherit;color:inherit}
+a{color:var(--lake);text-decoration:none}
+:focus-visible{outline:2px solid var(--lake);outline-offset:2px;border-radius:6px}
+
+.shell{max-width:520px;margin:0 auto;padding-bottom:96px;position:relative}
+
+/* ============ HERO ============ */
+.hero{position:relative;overflow:hidden;background:linear-gradient(178deg,var(--sky-1) 0%, var(--sky-2) 72%, var(--sky-3) 100%);color:var(--hero-ink);padding:20px 20px 0}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;position:relative;z-index:3}
+.eyebrow{font-family:var(--fm);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sky-3);filter:brightness(1.5)}
+.hero h1{font-family:var(--fd);font-weight:800;font-size:clamp(46px,15vw,68px);line-height:.82;margin:6px 0 0;letter-spacing:-.01em;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--brass);display:block}
+.countdown{text-align:right;flex-shrink:0}
+.countdown .num{font-family:var(--fd);font-weight:800;font-size:44px;line-height:.85;color:var(--brass);display:block;font-variant-numeric:tabular-nums}
+.countdown .lbl{font-family:var(--fm);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--sky-3);filter:brightness(1.45)}
+.hero-meta{position:relative;z-index:3;display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-family:var(--fm);font-size:11px;color:var(--sky-3);filter:brightness(1.4)}
+.hero-meta b{color:var(--hero-ink);font-weight:500;filter:brightness(1)}
+.skyline{display:block;width:100%;height:auto;margin-top:14px;position:relative;z-index:2}
+.stars{position:absolute;inset:0;z-index:1;pointer-events:none}
+.stars i{position:absolute;width:2px;height:2px;background:var(--hero-ink);border-radius:50%;opacity:.5;animation:tw 4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.7}}
+.win{animation:flick 7s steps(1) infinite}
+@keyframes flick{0%,44%{opacity:1}45%,52%{opacity:.18}53%,100%{opacity:1}}
+
+/* ============ TABS ============ */
+.tabbar{position:fixed;bottom:0;left:0;right:0;z-index:40;background:color-mix(in srgb,var(--surface) 92%, transparent);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:6px 0 max(6px,env(safe-area-inset-bottom))}
+.tabbar-in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
+.tabbtn{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;color:var(--muted);transition:color .18s}
+.tabbtn svg{width:21px;height:21px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tabbtn span{font-family:var(--fm);font-size:9px;letter-spacing:.08em;text-transform:uppercase}
+.tabbtn[aria-selected="true"]{color:var(--brass)}
+.tabbtn[aria-selected="true"] svg{transform:translateY(-1px) scale(1.06)}
+.tabbtn svg{transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+.panel{display:none;padding:0 16px}
+.panel.on{display:block;animation:slidein .34s cubic-bezier(.22,.9,.3,1)}
+@keyframes slidein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ============ SHARED ============ */
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:26px 0 12px}
+.sec-head h2{font-family:var(--fd);font-weight:800;font-size:30px;line-height:1;margin:0;letter-spacing:.005em}
+.sec-head .hint{font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);box-shadow:var(--shadow)}
+.note{font-size:12.5px;color:var(--muted);line-height:1.5}
+.pill{display:inline-flex;align-items:center;gap:5px;font-family:var(--fm);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;padding:3px 8px;border-radius:100px;white-space:nowrap}
+.pill.ok{background:var(--good-soft);color:var(--good)}
+.pill.falta{background:var(--star-soft);color:var(--star)}
+.pill.voto{background:var(--lake-soft);color:var(--lake)}
+.pill.plan{background:var(--surface-3);color:var(--text-2)}
+.star{width:10px;height:10px;flex-shrink:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:9px 14px;border-radius:10px;background:var(--brass);color:#12222C;font-weight:800;font-size:13px;letter-spacing:.01em;transition:transform .14s,filter .14s}
+:root[data-theme="dark"] .btn,:root:not([data-theme="light"]) .btn{color:#0B1A24}
+@media (prefers-color-scheme: light){:root:not([data-theme="dark"]) .btn{color:#FFF8EA}}
+.btn:active{transform:scale(.96)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text-2);font-weight:600}
+.btn.sm{padding:6px 10px;font-size:12px;border-radius:8px}
+.empty{text-align:center;padding:30px 18px;color:var(--muted)}
+.empty .big{font-family:var(--fd);font-size:26px;color:var(--text-2);line-height:1;margin-bottom:6px}
+
+/* ============ DAY RAIL ============ */
+.dayrail{display:flex;gap:8px;overflow-x:auto;padding:14px 16px 4px;margin:0 -16px;scrollbar-width:none;scroll-snap-type:x mandatory}
+.dayrail::-webkit-scrollbar{display:none}
+.daychip{flex:0 0 auto;scroll-snap-align:center;background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;padding:8px 12px 9px;min-width:62px;text-align:center;transition:transform .2s cubic-bezier(.34,1.4,.64,1),border-color .2s,background .2s}
+.daychip .dw{font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.daychip .dn{font-family:var(--fd);font-weight:800;font-size:26px;line-height:.9;color:var(--text)}
+.daychip .dm{font-family:var(--fm);font-size:9px;color:var(--muted)}
+.daychip[aria-selected="true"]{background:var(--brass);border-color:var(--brass);transform:translateY(-2px)}
+.daychip[aria-selected="true"] .dn,.daychip[aria-selected="true"] .dw,.daychip[aria-selected="true"] .dm{color:#1A1206}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .daychip[aria-selected="true"] .dn,:root:not([data-theme="light"]) .daychip[aria-selected="true"] .dw,:root:not([data-theme="light"]) .daychip[aria-selected="true"] .dm{color:#12100A}}
+.daychip .dots{display:flex;gap:2px;justify-content:center;margin-top:4px;height:4px}
+.daychip .dots i{width:4px;height:4px;border-radius:50%;background:var(--line)}
+.daychip .dots i.ok{background:var(--good)}
+.daychip .dots i.falta{background:var(--star)}
+.daychip[aria-selected="true"] .dots i{background:rgba(26,18,6,.28)}
+.daychip[aria-selected="true"] .dots i.ok{background:#134A3A}
+.daychip[aria-selected="true"] .dots i.falta{background:#7A1A1A}
+
+.dayhead{margin:18px 0 6px}
+.dayhead .kicker{font-family:var(--fm);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.dayhead h3{font-family:var(--fd);font-weight:800;font-size:36px;line-height:.92;margin:2px 0 0;text-wrap:balance}
+.daytags{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px;align-items:center}
+.ltag{display:inline-flex;align-items:center;gap:5px;font-family:var(--fm);font-size:10px;color:var(--text-2);background:var(--surface-2);border:1px solid var(--line-soft);padding:3px 8px 3px 5px;border-radius:100px}
+.ltag i{width:12px;height:12px;border-radius:3px;flex-shrink:0;display:block}
+
+/* ============ TIMELINE ============ */
+.tl{position:relative;margin:14px 0 8px;padding-left:56px}
+.tl::before{content:"";position:absolute;left:26px;top:8px;bottom:14px;width:2px;background:linear-gradient(var(--brass),var(--line-soft));opacity:.55;border-radius:2px}
+.ev{position:relative;margin-bottom:12px;animation:evin .4s both cubic-bezier(.22,.9,.3,1)}
+@keyframes evin{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:none}}
+.ev .time{position:absolute;left:-56px;top:12px;width:44px;text-align:right;font-family:var(--fm);font-size:11.5px;font-weight:600;color:var(--text-2);font-variant-numeric:tabular-nums}
+.ev .node{position:absolute;left:-32px;top:16px;width:11px;height:11px;border-radius:50%;background:var(--surface);border:2px solid var(--line);z-index:2}
+.ev.s-ok .node{border-color:var(--good);background:var(--good)}
+.ev.s-falta .node{border-color:var(--star);background:var(--star)}
+.ev.s-voto .node{border-color:var(--lake)}
+.ev.done .node{background:var(--brass);border-color:var(--brass)}
+.evcard{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r);padding:12px 13px;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s,opacity .25s}
+.ev.done .evcard{opacity:.58}
+.ev.done .evtitle{text-decoration:line-through;text-decoration-color:var(--brass);text-decoration-thickness:2px}
+.evtop{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.evslot{font-family:var(--fm);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.evtitle{font-family:var(--fd);font-weight:800;font-size:25px;line-height:.98;margin:1px 0 0;letter-spacing:.005em}
+.evwhere{font-size:12.5px;color:var(--text-2);margin-top:4px;line-height:1.45}
+.evsub{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:5px}
+.evsub li{font-size:11.5px;color:var(--text-2);background:var(--surface-2);border-radius:7px;padding:3px 7px;line-height:1.35}
+.evacts{display:flex;gap:6px;flex-wrap:wrap;margin-top:11px;align-items:center}
+.chk{display:inline-flex;align-items:center;gap:6px;font-family:var(--fm);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:6px 9px;margin-left:auto;transition:all .18s}
+.chk b{display:block;width:13px;height:13px;border-radius:4px;border:1.5px solid var(--line);position:relative;transition:all .18s}
+.ev.done .chk{color:var(--brass);border-color:var(--brass)}
+.ev.done .chk b{background:var(--brass);border-color:var(--brass)}
+.ev.done .chk b::after{content:"";position:absolute;left:3.6px;top:.6px;width:4px;height:8px;border:solid #16110A;border-width:0 2px 2px 0;transform:rotate(43deg)}
+.linkbtn{display:inline-flex;align-items:center;gap:5px;font-family:var(--fm);font-size:10.5px;letter-spacing:.04em;color:var(--lake);border:1px solid var(--line);border-radius:8px;padding:6px 9px;transition:background .18s}
+.linkbtn:active{background:var(--surface-2)}
+.linkbtn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ============ BUDGET ============ */
+.bote{padding:18px 16px 16px;text-align:center;position:relative;overflow:hidden}
+.ring-wrap{position:relative;width:186px;height:186px;margin:4px auto 0}
+.ring{transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-linecap:round}
+.ring .track{stroke:var(--surface-3)}
+.ring .fill{stroke:var(--brass);transition:stroke-dashoffset 1s cubic-bezier(.22,.9,.3,1),stroke .4s}
+.ring-mid{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring-mid .lbl{font-family:var(--fm);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.ring-mid .amt{font-family:var(--fd);font-weight:800;font-size:47px;line-height:.86;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.ring-mid .alt{font-family:var(--fm);font-size:10.5px;color:var(--muted);margin-top:3px;font-variant-numeric:tabular-nums}
+.botefacts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-soft);border-top:1px solid var(--line-soft);margin-top:18px}
+.fact{background:var(--surface);padding:11px 13px;text-align:left}
+.fact .k{font-family:var(--fm);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.fact .v{font-family:var(--fd);font-weight:800;font-size:25px;line-height:1.05;font-variant-numeric:tabular-nums}
+.fact .v.sm{font-size:19px}
+.catbar{display:flex;align-items:center;gap:9px;padding:7px 0}
+.catbar .cn{font-size:12.5px;width:88px;flex-shrink:0;color:var(--text-2)}
+.catbar .ct{flex:1;height:9px;background:var(--surface-3);border-radius:100px;overflow:hidden}
+.catbar .ct i{display:block;height:100%;border-radius:100px;background:var(--brass);transition:width .8s cubic-bezier(.22,.9,.3,1)}
+.catbar .cv{font-family:var(--fm);font-size:11.5px;font-variant-numeric:tabular-nums;width:62px;text-align:right;color:var(--text)}
+.exp{display:flex;align-items:center;gap:10px;padding:11px 13px;border-bottom:1px solid var(--line-soft)}
+.exp:last-child{border-bottom:none}
+.exp .ei{width:30px;height:30px;border-radius:9px;background:var(--surface-2);display:grid;place-items:center;font-size:14px;flex-shrink:0}
+.exp .em{flex:1;min-width:0}
+.exp .et{font-weight:600;font-size:13.5px;line-height:1.25;overflow-wrap:anywhere}
+.exp .es{font-family:var(--fm);font-size:10.5px;color:var(--muted);margin-top:1px}
+.exp .ev2{font-family:var(--fm);font-size:14px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.exp .del{color:var(--muted);padding:4px;font-size:15px;line-height:1;opacity:.6}
+
+.field{display:block;margin-bottom:10px}
+.field .fl{font-family:var(--fm);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:4px}
+.field input,.field select{width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:10px 11px;font-size:15px}
+.field input::placeholder{color:var(--muted)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* ============ WEATHER ============ */
+.wgrid{display:flex;flex-direction:column}
+.wrow{display:grid;grid-template-columns:52px 1fr 96px;align-items:center;gap:10px;padding:9px 13px;border-bottom:1px solid var(--line-soft)}
+.wrow:last-child{border-bottom:none}
+.wrow.now{background:var(--brass-soft)}
+.wd{font-family:var(--fm);font-size:10.5px;color:var(--text-2);line-height:1.2}
+.wd b{display:block;font-family:var(--fd);font-size:19px;color:var(--text);line-height:.95}
+.wbar{position:relative;height:8px;background:var(--surface-3);border-radius:100px}
+.wbar i{position:absolute;top:0;height:100%;border-radius:100px;background:linear-gradient(90deg,var(--lake),var(--brass))}
+.wt{font-family:var(--fm);font-size:12.5px;font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.wt .lo{color:var(--muted)}
+.packlist{list-style:none;margin:0;padding:0}
+.packlist li{display:flex;gap:10px;padding:9px 13px;border-bottom:1px solid var(--line-soft);font-size:13.5px;line-height:1.4}
+.packlist li:last-child{border-bottom:none}
+.packlist .pi{font-size:15px;flex-shrink:0;width:20px;text-align:center}
+
+/* ============ POLLS / TODOS ============ */
+.poll{padding:13px}
+.poll h4{font-family:var(--fd);font-weight:800;font-size:23px;line-height:1;margin:0 0 2px}
+.poll .q{font-size:12px;color:var(--muted);margin-bottom:11px}
+.opt{width:100%;text-align:left;position:relative;border:1px solid var(--line);border-radius:10px;padding:9px 11px;margin-bottom:7px;overflow:hidden;transition:border-color .2s}
+.opt .obg{position:absolute;left:0;top:0;bottom:0;background:var(--lake-soft);transition:width .7s cubic-bezier(.22,.9,.3,1);z-index:0}
+.opt .oin{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.opt .ol{font-size:13.5px;font-weight:600;line-height:1.3}
+.opt .od{font-size:11.5px;color:var(--muted);margin-top:1px;line-height:1.35}
+.opt .oc{font-family:var(--fm);font-size:11.5px;color:var(--text-2);flex-shrink:0;font-variant-numeric:tabular-nums}
+.opt.mine{border-color:var(--lake)}
+.opt.mine .ol::after{content:" ✓";color:var(--lake)}
+.voters{font-family:var(--fm);font-size:10px;color:var(--muted);margin-top:2px;line-height:1.4;overflow-wrap:anywhere}
+.todo{display:flex;align-items:flex-start;gap:10px;padding:11px 13px;border-bottom:1px solid var(--line-soft)}
+.todo:last-child{border-bottom:none}
+.todo .tb{width:19px;height:19px;border-radius:6px;border:1.5px solid var(--line);flex-shrink:0;margin-top:1px;position:relative;transition:all .2s}
+.todo.done .tb{background:var(--brass);border-color:var(--brass)}
+.todo.done .tb::after{content:"";position:absolute;left:5.6px;top:1.6px;width:5px;height:10px;border:solid #16110A;border-width:0 2px 2px 0;transform:rotate(43deg)}
+.todo .tt{flex:1;font-size:13.5px;line-height:1.4}
+.todo.done .tt{opacity:.5;text-decoration:line-through}
+.todo .tm{font-family:var(--fm);font-size:10px;color:var(--muted);margin-top:2px}
+.todo .del{color:var(--muted);opacity:.5;padding:2px 4px;font-size:14px;line-height:1}
+
+/* ============ ME / STATUS ============ */
+.mebar{display:flex;align-items:center;gap:8px;padding:9px 13px;background:var(--surface-2);border-radius:12px;border:1px solid var(--line-soft);margin-top:14px}
+.mebar .av{width:28px;height:28px;border-radius:50%;background:var(--brass);color:#1A1206;display:grid;place-items:center;font-family:var(--fd);font-weight:800;font-size:15px;flex-shrink:0}
+.mebar .mt{flex:1;min-width:0}
+.mebar .mn{font-weight:600;font-size:13.5px;line-height:1.2}
+.mebar .ms{font-family:var(--fm);font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--muted);flex-shrink:0}
+.dot.live{background:var(--good);box-shadow:0 0 0 0 var(--good);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--good) 55%,transparent)}70%{box-shadow:0 0 0 7px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+/* ============ MODAL ============ */
+.scrim{position:fixed;inset:0;background:rgba(6,18,26,.6);backdrop-filter:blur(3px);z-index:60;display:none;align-items:flex-end;justify-content:center}
+.scrim.on{display:flex;animation:fade .2s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.sheet{background:var(--surface);border-radius:20px 20px 0 0;width:100%;max-width:520px;padding:8px 16px max(20px,env(safe-area-inset-bottom));max-height:88vh;overflow-y:auto;animation:up .3s cubic-bezier(.22,.9,.3,1)}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+.grab{width:36px;height:4px;background:var(--line);border-radius:100px;margin:6px auto 12px}
+.sheet h3{font-family:var(--fd);font-weight:800;font-size:29px;line-height:1;margin:0 0 14px}
+
+/* ============ BURST ============ */
+.burst{position:fixed;pointer-events:none;z-index:80;width:0;height:0}
+.burst i{position:absolute;width:9px;height:9px;left:-4px;top:-4px}
+.burst svg{width:100%;height:100%;fill:var(--brass)}
+
+.shtxt{width:100%;min-height:210px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px;font-family:var(--fm);font-size:11.5px;line-height:1.6;resize:vertical;white-space:pre-wrap}
+.foot{text-align:center;padding:26px 16px 8px;font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.9}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
+}
+
+/* ---- barra de sincronización ---- */
+.synbar{display:flex;align-items:center;gap:8px;margin:0 16px;padding:8px 12px;background:var(--surface);border:1px solid var(--line-soft);border-radius:0 0 12px 12px;border-top:none;font-family:var(--fm);font-size:10.5px;color:var(--muted);box-shadow:var(--shadow)}
+.synbar #synTxt{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.synref{font-family:var(--fm);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--lake);border:1px solid var(--line);border-radius:7px;padding:4px 8px;flex-shrink:0}
+.dot.warn{background:var(--brass)}
+.dot.bad{background:var(--star)}
+/* ---- solo administradora ---- */
+.adminonly{display:none}
+body.is-admin .adminonly{display:block}
+body.is-admin .adminonly[style*="flex"]{display:flex}
+.adminlink{font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-soft);border-radius:100px;padding:7px 14px;opacity:.75}
+body.is-admin .adminlink{color:var(--brass);border-color:var(--brass);opacity:1}
+/* ---- estados de solo lectura ---- */
+.chk.ro{cursor:default;color:var(--brass);border-color:var(--brass)}
+.chk.ro b{background:var(--brass);border-color:var(--brass)}
+.chk.ro b::after{content:"";position:absolute;left:3.6px;top:.6px;width:4px;height:8px;border:solid #16110A;border-width:0 2px 2px 0;transform:rotate(43deg)}
+.tb.ro{display:block;cursor:default}
+.todo.done .tb.ro{background:var(--brass);border-color:var(--brass);position:relative}
+.todo.done .tb.ro::after{content:"";position:absolute;left:5.6px;top:1.6px;width:5px;height:10px;border:solid #16110A;border-width:0 2px 2px 0;transform:rotate(43deg)}
+.opt.ro{cursor:default}
+.oc.chosen{font-family:var(--fm);font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--lake);background:var(--lake-soft);padding:3px 8px;border-radius:100px}
+.opt.mine{border-color:var(--lake);background:var(--lake-soft)}
+.opt.mine .ol::after{content:""}
+/* ---- toast ---- */
+.toast{position:fixed;left:50%;bottom:88px;transform:translate(-50%,16px);z-index:90;background:var(--text);color:var(--bg);font-size:13px;padding:10px 16px;border-radius:100px;box-shadow:var(--shadow-lift);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:88vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <header class="hero">
+    <div class="stars" id="stars" aria-hidden="true"></div>
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow">13 – 19 sept · 2026</div>
+        <h1>Siete días<em>en Chicago</em></h1>
+      </div>
+      <div class="countdown">
+        <span class="num" id="cdNum">–</span>
+        <span class="lbl" id="cdLbl">cargando</span>
+      </div>
+    </div>
+    <div class="hero-meta">
+      <span><b id="mSpots">21</b> planes</span>
+      <span><b id="mOk">5</b> confirmados</span>
+      <span><b id="mFalta">–</b> por resolver</span>
+    </div>
+    <svg class="skyline" viewBox="0 0 520 132" preserveAspectRatio="xMidYMax meet" aria-hidden="true" id="sky"></svg>
+  </header>
+
+  <div class="synbar" id="synbar">
+    <span class="dot" id="synDot"></span>
+    <span id="synTxt">Cargando…</span>
+    <button class="synref" id="synRef" aria-label="Actualizar">Actualizar</button>
+  </div>
+
+  <section class="panel on" id="p-hoy" role="tabpanel" aria-label="Hoy"><div id="hoyBody"></div></section>
+
+  <section class="panel" id="p-plan" role="tabpanel" aria-label="Itinerario">
+    <div class="dayrail" id="dayrail" role="tablist" aria-label="Días del viaje"></div>
+    <div id="dayBody"></div>
+    <div class="foot" id="planFoot"></div>
+  </section>
+
+  <section class="panel" id="p-bote" role="tabpanel" aria-label="La vaca">
+    <div class="sec-head"><h2>La vaca</h2><button class="hint adminonly" id="cfgBtn" style="cursor:pointer;color:var(--lake)">ajustes</button></div>
+
+    <div class="card">
+      <div class="bote">
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 186 186" width="186" height="186" aria-hidden="true">
+            <circle class="track" cx="93" cy="93" r="80" stroke-width="13"></circle>
+            <circle class="fill" id="ringFill" cx="93" cy="93" r="80" stroke-width="13" stroke-dasharray="502.65" stroke-dashoffset="502.65"></circle>
+          </svg>
+          <div class="ring-mid">
+            <span class="lbl">queda</span>
+            <span class="amt" id="ringAmt">$0</span>
+            <span class="alt" id="ringAlt">de $0</span>
+          </div>
+        </div>
+        <p class="note" id="ringNote" style="margin:14px 6px 0">Sin gastos todavía.</p>
+      </div>
+      <div class="botefacts">
+        <div class="fact"><div class="k">Gastado</div><div class="v" id="fSpent">$0</div></div>
+        <div class="fact"><div class="k">Por persona</div><div class="v" id="fPer">$0</div></div>
+        <div class="fact"><div class="k">Presupuesto</div><div class="v sm" id="fBudget">$0</div></div>
+        <div class="fact"><div class="k">Días restantes</div><div class="v sm" id="fDays">–</div></div>
+      </div>
+    </div>
+
+    <div class="adminonly" style="margin-top:12px">
+      <button class="btn" id="addExpBtn" style="width:100%">+ Registrar gasto</button>
+    </div>
+
+    <div class="sec-head"><h2>En qué se va</h2><span class="hint">por categoría</span></div>
+    <div class="card" style="padding:11px 13px" id="catBox"></div>
+
+    <div class="sec-head"><h2>Movimientos</h2><span class="hint" id="expCount">0</span></div>
+    <div class="card" id="expList"></div>
+  </section>
+
+  <section class="panel" id="p-clima" role="tabpanel" aria-label="Clima">
+    <div class="sec-head"><h2>Qué tiempo hace</h2><span class="hint">Chicago</span></div>
+    <div class="card wgrid" id="wBox"></div>
+    <p class="note" style="margin:9px 4px 0">Estos son los <b>promedios históricos</b> de Chicago para estas fechas, no el pronóstico del día. Para el pronóstico real:</p>
+    <a class="btn ghost" style="width:100%;margin-top:9px" href="https://www.google.com/search?q=clima+Chicago+pron%C3%B3stico+7+d%C3%ADas" target="_blank" rel="noopener">Ver pronóstico en vivo ↗</a>
+
+    <div class="sec-head"><h2>Luz del día</h2><span class="hint">para las fotos</span></div>
+    <div class="card" style="padding:13px">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line-soft);border-radius:10px;overflow:hidden">
+        <div style="background:var(--surface);padding:10px 8px;text-align:center"><div style="font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Amanece</div><div style="font-family:var(--fd);font-weight:800;font-size:23px;line-height:1.1">6:31</div></div>
+        <div style="background:var(--surface);padding:10px 8px;text-align:center"><div style="font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--brass)">Hora dorada</div><div style="font-family:var(--fd);font-weight:800;font-size:23px;line-height:1.1;color:var(--brass)">18:20</div></div>
+        <div style="background:var(--surface);padding:10px 8px;text-align:center"><div style="font-family:var(--fm);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Anochece</div><div style="font-family:var(--fd);font-weight:800;font-size:23px;line-height:1.1">19:02</div></div>
+      </div>
+      <p class="note" style="margin-top:10px">Aproximado para mediados de septiembre. La mejor luz sobre el skyline es desde el Riverwalk mirando al este, y desde Milton Lee Olive Park (miércoles) el skyline queda de frente al atardecer.</p>
+    </div>
+
+    <div class="sec-head"><h2>Qué empacar</h2><span class="hint">7 días</span></div>
+    <div class="card"><ul class="packlist" id="packBox"></ul></div>
+    <div class="foot">Chicago en septiembre es amable de día<br>y traicionera al lado del lago.</div>
+  </section>
+
+  <section class="panel" id="p-extras" role="tabpanel" aria-label="Extras">
+    <div class="sec-head"><h2>Por decidir</h2><span class="hint" id="decHint">–</span></div>
+    <div id="pollBox"></div>
+
+    <div class="sec-head"><h2>Pendientes</h2><span class="hint" id="todoCount">–</span></div>
+    <div class="card" id="todoBox"></div>
+    <div class="adminonly" style="display:flex;gap:8px;margin-top:10px">
+      <input id="todoInput" placeholder="Agregar pendiente…" style="flex:1;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14.5px">
+      <button class="btn" id="todoAdd">Añadir</button>
+    </div>
+
+    <div class="sec-head"><h2>Instalarla</h2><span class="hint">iPhone</span></div>
+    <div class="card" style="padding:14px">
+      <p class="note" style="color:var(--text-2)">Para que quede como una app en la pantalla de inicio:</p>
+      <ol style="margin:10px 0 0;padding-left:19px;font-size:13.5px;line-height:1.75;color:var(--text-2)">
+        <li>Abre este link en <b>Safari</b> (no en Chrome).</li>
+        <li>Toca el botón <b>Compartir</b> ⬆️ abajo en el centro.</li>
+        <li>Baja y elige <b>Añadir a pantalla de inicio</b>.</li>
+        <li>Toca <b>Añadir</b>.</li>
+      </ol>
+      <p class="note" style="margin-top:11px">No hace falta cuenta ni contraseña: quien tenga el link la ve.</p>
+    </div>
+
+    <div class="sec-head"><h2>Buenos datos</h2><span class="hint">Chicago</span></div>
+    <div class="card"><ul class="packlist" id="tipBox"></ul></div>
+
+    <div style="text-align:center;padding:24px 0 4px">
+      <button class="adminlink" id="adminBtn">Modo administradora</button>
+    </div>
+    <div class="foot">Hecho para las nueve.<br>Buen viaje.</div>
+  </section>
+
+  <nav class="tabbar" role="tablist" aria-label="Secciones"><div class="tabbar-in" id="tabbar"></div></nav>
+</div>
+
+<div class="scrim" id="scrim"><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const TRIP = { start:'2026-09-13', end:'2026-09-19', people:9 };
+
+const MAPQ = q => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q + ' Chicago');
+
+const DAYS = [
+{
+  n:1, date:'2026-09-13', dow:'Domingo', dm:'13 sep',
+  hood:'River North', title:'El río y la milla',
+  el:{name:'Brown / Purple · Merchandise Mart', color:'#5D3A1A'},
+  walk:'≈ 5 km caminando',
+  events:[
+    {id:'d1a', time:'11:00', slot:'Brunch', title:'Beatrix', where:'River North · reserva confirmada para 7', status:'ok', map:'Beatrix River North', tag:'🍳'},
+    {id:'d1b', time:'13:00', slot:'Tarde libre', title:'Riverwalk y Magnificent Mile', where:'Caminar sin afán por la orilla del río y subir por Michigan Avenue.', status:'plan', map:'Chicago Riverwalk', tag:'🚶‍♀️',
+     sub:['Chicago Riverwalk','Magnificent Mile','Puentes levadizos','Marina City']},
+    {id:'d1c', time:'19:00', slot:'Noche', title:'Gilt Bar', where:'Falta reservar. Es pequeño y se llena — vale la pena llamar antes.', status:'falta', url:'https://www.giltbarchicago.com/', map:'Gilt Bar', tag:'🍸'}
+  ]
+},
+{
+  n:2, date:'2026-09-14', dow:'Lunes', dm:'14 sep',
+  hood:'The Loop', title:'Parque, arte y arquitectura',
+  el:{name:'Todas las líneas · Randolph/Wabash', color:'#0F6E93'},
+  walk:'≈ 6 km caminando',
+  events:[
+    {id:'d2a', time:'11:00', slot:'Brunch', title:'Por definir', where:'La única casilla vacía del itinerario. Hay una votación abierta en Extras.', status:'voto', poll:'p-lunes', tag:'❓'},
+    {id:'d2b', time:'13:00', slot:'Tarde', title:'Millennium Park y Art Institute', where:'Todo queda en cuatro cuadras: se puede hacer sin correr.', status:'plan', map:'Millennium Park', tag:'🎨',
+     sub:['Cloud Gate (the Bean)','Crown Fountain','Lurie Garden','Art Institute of Chicago']},
+    {id:'d2c', time:'19:00', slot:'Tour', title:'Architecture Boat Tour', where:'Falta comprar el City Pass o los tickets sueltos. Es el mejor plan de Chicago y se agota.', status:'falta', url:'https://www.viator.com/es-ES/tours/Chicago/Chicago-River-Architecture-Tour/d673-76126P1', map:'Chicago Architecture River Cruise', tag:'⛴️'},
+    {id:'d2d', time:'20:00', slot:'Noche', title:"Cindy's Rooftop", where:'Terraza sobre Millennium Park. La vista es el plan.', status:'plan', url:'https://cindysrooftop.com/', map:"Cindy's Rooftop", tag:'🌆'}
+  ]
+},
+{
+  n:3, date:'2026-09-15', dow:'Martes', dm:'15 sep',
+  hood:'West Loop · Fulton Market', title:'El barrio de la comida',
+  el:{name:'Green / Pink · Morgan', color:'#009B3A'},
+  walk:'≈ 5 km caminando',
+  events:[
+    {id:'d3a', time:'11:00', slot:'Brunch', title:'Au Cheval o Small Cheval', where:'Au Cheval tiene la mejor hamburguesa de la ciudad y una fila eterna. Small Cheval es la versión rápida.', status:'voto', poll:'p-cheval', url:'https://www.auchevalchicago.com/', map:'Au Cheval', tag:'🍔'},
+    {id:'d3b', time:'13:00', slot:'Tarde', title:'Fulton Market y Randolph Street', where:'Tiendas, galerías y murales. Es el barrio más fotografiable del viaje.', status:'plan', map:'Fulton Market District', tag:'🖼️',
+     sub:['Randolph Restaurant Row','Galerías de West Loop','Murales de Fulton Market']},
+    {id:'d3c', time:'19:00', slot:'Antojo', title:"Jeni's Ice Cream", where:'Helado antes de la cena. Sí, en ese orden.', status:'plan', map:"Jeni's Splendid Ice Creams Wicker Park", tag:'🍦'},
+    {id:'d3d', time:'20:00', slot:'Cena', title:'Girl & the Goat', where:'Y después el bar izakaya de Momotaro, a cinco minutos.', status:'falta', url:'https://www.girlandthegoat.com/', map:'Girl and the Goat', tag:'🐐',
+     sub:['Girl & the Goat','Momotaro · Bar Izakaya']}
+  ]
+},
+{
+  n:4, date:'2026-09-16', dow:'Miércoles', dm:'16 sep',
+  hood:'Streeterville · el lago', title:'Todo el día junto al agua',
+  el:{name:'Sin L · bus 29 o 65 a Navy Pier', color:'#8A6D3B'},
+  walk:'≈ 8 km caminando',
+  events:[
+    {id:'d4a', time:'13:00', slot:'Almuerzo', title:'Alla Vita', where:'Reserva confirmada para 7 — ojo, es a la 1:00 pm, no a las 11.', status:'ok', map:'Alla Vita', tag:'🍝'},
+    {id:'d4b', time:'14:30', slot:'Tarde', title:'Lago Michigan y Navy Pier', where:'El día de más caminata del viaje. Lleven tenis y una chaqueta: junto al lago sopla.', status:'plan', map:'Navy Pier', tag:'🎡',
+     sub:['Navy Pier','Lakefront Trail','Milton Lee Olive Park','Ohio Street Beach']},
+    {id:'d4c', time:'19:00', slot:'Por decidir', title:'¿Paseo en barco o Riverwalk?', where:'Quedó con signo de pregunta en el itinerario. Voten en Extras.', status:'voto', poll:'p-barco', tag:'⛵'},
+    {id:'d4d', time:'20:00', slot:'Cena', title:'The Purple Pig', where:'Sobre Michigan Ave. Tapas mediterráneas, para compartir todo.', status:'falta', map:'The Purple Pig', tag:'🐷'}
+  ]
+},
+{
+  n:5, date:'2026-09-17', dow:'Jueves', dm:'17 sep',
+  hood:'Lincoln Park', title:'Verde, animales y vitrinas',
+  el:{name:'Brown / Purple · Armitage', color:'#5D3A1A'},
+  walk:'≈ 6 km caminando',
+  events:[
+    {id:'d5a', time:'11:00', slot:'Brunch', title:'Summer House Santa Monica', where:'Reserva confirmada para 7. El sitio está diseñado para que parezca que están en California.', status:'ok', map:'Summer House Santa Monica', tag:'☀️'},
+    {id:'d5b', time:'13:00', slot:'Tarde', title:'Lincoln Park, Conservatory y Zoo', where:'El zoológico es gratis y el invernadero también. De los dos, el invernadero es el que sorprende.', status:'plan', map:'Lincoln Park Zoo', tag:'🌿',
+     sub:['Lincoln Park','Lincoln Park Conservatory','Lincoln Park Zoo','Alfred Caldwell Lily Pool']},
+    {id:'d5c', time:'19:00', slot:'Vitrinas', title:'Librerías y decoración', where:'Caminar Armitage y Halsted, entrar a lo que se les antoje.', status:'plan', map:'Armitage Avenue Lincoln Park', tag:'📚'},
+    {id:'d5d', time:'20:00', slot:'Cena', title:'Roberts Pizza o Café Ba-Ba-Reeba', where:'Pizza de Chicago contra tapas españolas. Hay votación en Extras.', status:'voto', poll:'p-jueves', url:'https://www.cafebabareeba.com/', map:'Cafe Ba-Ba-Reeba', tag:'🍕'}
+  ]
+},
+{
+  n:6, date:'2026-09-18', dow:'Viernes', dm:'18 sep',
+  hood:'Wicker Park · Bucktown', title:'Vintage y azoteas',
+  el:{name:'Blue Line · Damen', color:'#00A1DE'},
+  walk:'≈ 5 km caminando',
+  events:[
+    {id:'d6a', time:'11:00', slot:'Brunch', title:'The Allis · Soho House', where:'Reserva confirmada para 7, con el atrio incluido. Es el brunch más bonito de la semana.', status:'ok', map:'The Allis Soho House Chicago', tag:'🛋️'},
+    {id:'d6b', time:'13:00', slot:'Tarde', title:'Wicker Park, Bucktown y Milwaukee Ave', where:'El eje del vintage. Milwaukee Avenue es la calle a recorrer completa.', status:'plan', map:'Wicker Park Chicago', tag:'🧥',
+     sub:['Milwaukee Avenue','Damen Avenue','Tiendas vintage','The Flat Iron Arts Building']},
+    {id:'d6c', time:'19:00', slot:'Comida rápida', title:'CAVA', where:'Algo liviano antes de la azotea.', status:'plan', map:'CAVA Wicker Park', tag:'🥙'},
+    {id:'d6d', time:'20:00', slot:'Noche', title:'The Robey · Up Room', where:'La azotea con la mejor vista del lado oeste. Última noche larga.', status:'falta', map:'The Robey Hotel Wicker Park', tag:'🌃'}
+  ]
+},
+{
+  n:7, date:'2026-09-19', dow:'Sábado', dm:'19 sep',
+  hood:'Gold Coast', title:'Compras y el último mirador',
+  el:{name:'Red Line · Clark/Division', color:'#C60C30'},
+  walk:'≈ 4 km caminando',
+  events:[
+    {id:'d7a', time:'11:00', slot:'Brunch', title:'3 Arts Club Café', where:'Dentro de RH Chicago, bajo la claraboya. Reserva confirmada para 7.', status:'ok', map:'3 Arts Club Cafe RH Chicago', tag:'🕯️'},
+    {id:'d7b', time:'13:00', slot:'Tarde', title:'Compras y 360 Chicago', where:'Último día: lo que falte comprar y el mirador para despedirse de la ciudad desde arriba.', status:'plan', map:'360 Chicago Observation Deck', tag:'🛍️',
+     sub:['Oak Street','Magnificent Mile','360 Chicago','TILT (el mirador inclinado)']}
+  ]
+}];
+
+const POLLS = [
+  { id:'p-lunes', title:'¿Dónde desayunamos el lunes?', q:'Es la única casilla vacía del itinerario. Estos quedan cerca de Millennium Park.',
+    options:[
+      {k:'wildberry', l:'Wildberry Pancakes', d:'A una cuadra de Millennium Park. Fila larga pero rápida.'},
+      {k:'lou', l:"Lou Mitchell's", d:'Institución desde 1923. Regalan donut holes en la fila.'},
+      {k:'beatrix-loop', l:'Beatrix Loop', d:'Ya sabemos que nos gusta; hay sede en el Loop.'},
+      {k:'cindys', l:"Brunch en Cindy's", d:'Y nos ahorramos la vuelta de la noche.'}
+    ]},
+  { id:'p-cheval', title:'¿Au Cheval o Small Cheval?', q:'Martes 11:00. La diferencia real es la fila.',
+    options:[
+      {k:'au', l:'Au Cheval', d:'La hamburguesa famosa. Puede ser 1–2 horas de espera.'},
+      {k:'small', l:'Small Cheval', d:'Casi lo mismo, sin fila, y nos deja la tarde libre.'}
+    ]},
+  { id:'p-barco', title:'¿Paseo en barco el miércoles?', q:'Quedó con signo de pregunta. Ojo: el tour de arquitectura ya es en barco el lunes.',
+    options:[
+      {k:'si', l:'Sí, otro paseo en barco', d:'Al atardecer sobre el lago se ve distinto al del río.'},
+      {k:'riverwalk', l:'Riverwalk a pie', d:'Gratis, sin horario, y ya vamos cansadas del día en el lago.'},
+      {k:'nada', l:'Nada, descansar', d:'Directo a cenar al Purple Pig.'}
+    ]},
+  { id:'p-jueves', title:'¿Roberts Pizza o Café Ba-Ba-Reeba?', q:'Jueves en la noche, después de Lincoln Park.',
+    options:[
+      {k:'roberts', l:'Roberts Pizza & Dough', d:'Deep dish. No nos podemos ir de Chicago sin una.'},
+      {k:'baba', l:'Café Ba-Ba-Reeba', d:'Tapas, sangría y queda en Halsted, ahí mismo.'}
+    ]}
+];
+
+const SEED_TODOS = [
+  { t:'Reservar Gilt Bar para el domingo 7:00 pm', m:'Día 1 · estaba marcado en rojo en la hoja' },
+  { t:'Comprar el City Pass o los tickets del Architecture Boat Tour', m:'Día 2 · se agota, comprar antes de viajar' },
+  { t:'Confirmar si las reservas van para 7 personas o para las 9', m:'Las 5 reservas confirmadas están hechas para 7' },
+  { t:'Reservar Girl & the Goat (martes en la noche)', m:'Se reserva con semanas de anticipación' },
+  { t:'Reservar The Purple Pig (miércoles en la noche)', m:'No siempre aceptan grupos grandes' },
+  { t:'Definir el brunch del lunes', m:'Es la única casilla vacía · hay votación abierta' },
+  { t:'Reservar mesa en The Robey · Up Room (viernes)', m:'Azotea, última noche larga' },
+  { t:'Descargar la app Ventra para el metro (la "L")', m:'También sirve Apple Pay en los torniquetes' },
+  { t:'Poner el presupuesto real de la vaca en Ajustes', m:'Está en $9.000 como marcador, no es el número de ustedes' }
+];
+
+const WEATHER = [
+  { d:'Dom', n:13, hi:24, lo:15, c:'Soleado' },
+  { d:'Lun', n:14, hi:24, lo:15, c:'Parcialmente nublado' },
+  { d:'Mar', n:15, hi:24, lo:14, c:'Soleado' },
+  { d:'Mié', n:16, hi:23, lo:14, c:'Viento del lago' },
+  { d:'Jue', n:17, hi:23, lo:14, c:'Parcialmente nublado' },
+  { d:'Vie', n:18, hi:23, lo:13, c:'Fresco en la noche' },
+  { d:'Sáb', n:19, hi:23, lo:13, c:'Soleado' }
+];
+
+const PACK = [
+  ['🧥','<b>Una chaqueta liviana o trench.</b> De día hace 23–24 °C, pero a las 8 de la noche baja a 14 °C y junto al lago se siente menos.'],
+  ['👟','<b>Tenis cómodos, de verdad.</b> El itinerario tiene entre 4 y 8 km de caminata al día. El miércoles es el más largo.'],
+  ['👠','<b>Un par de tacón bajo</b> para las noches de azotea: Cindy\'s, The Robey y el Purple Pig.'],
+  ['🧣','<b>Una bufanda o pashmina fina.</b> Sirve para el barco del lunes en la noche, que es lo más frío de la semana.'],
+  ['☔','<b>Un impermeable plegable.</b> Llueve más o menos uno de cada tres días en septiembre, casi siempre corto.'],
+  ['🕶️','<b>Gafas de sol.</b> El sol de septiembre pega bajo y directo sobre el lago.'],
+  ['🔋','<b>Batería portátil.</b> Con mapas, fotos y esta app todo el día, el celular no llega a la noche.'],
+  ['💳','<b>Tarjeta sin cobro por transacción internacional</b> y algo de efectivo para propinas (18–20 % es lo normal).'],
+  ['🔌','<b>No necesitan adaptador</b>: Estados Unidos usa el mismo enchufe que Colombia.']
+];
+
+const TIPS = [
+  ['🚇','<b>La "L" es más rápida que el Uber</b> en hora pico, y las estaciones están señalizadas por color. El domingo y el lunes están a pie de todo; el viernes conviene la Blue Line a Damen.'],
+  ['💵','<b>El precio en la carta no es el que pagan.</b> Súmenle 10,25 % de impuesto y la propina. Muchos restaurantes ya cobran un cargo de servicio a grupos de 6 o más — revisen la cuenta antes de propinar dos veces.'],
+  ['🍕','<b>Deep dish contra tavern-style.</b> La pizza gruesa es la famosa, pero la que come la gente de Chicago es la delgada cortada en cuadritos. Vale probar las dos.'],
+  ['🌬️','<b>"Windy City" no era por el viento</b> sino por los políticos. Dicho eso, junto al lago sí sopla: en Navy Pier y Ohio Street Beach van a sentir cinco grados menos.'],
+  ['📸','<b>La foto del Bean</b> sale mejor a las 7 de la mañana o después de las 8 de la noche. A media tarde hay cien personas en el reflejo.'],
+  ['🏛️','<b>El Art Institute</b> es enorme. Con dos horas alcanza si van directo a los impresionistas y a "Nighthawks" y "American Gothic", que están ahí.'],
+  ['🚻','<b>Baños confiables y gratis:</b> el Chicago Cultural Center, el Art Institute y cualquier hotel grande de Michigan Avenue.'],
+  ['🆘','<b>911 para emergencias.</b> Chicago es segura en todos los barrios del itinerario; de noche, pedir carro en vez de caminar zonas vacías del Loop.']
+];
+
+const CATS = [
+  {k:'comida', l:'Comida y bares', i:'🍽️'},
+  {k:'tours',  l:'Tours y entradas', i:'🎟️'},
+  {k:'transporte', l:'Transporte', i:'🚕'},
+  {k:'alojamiento', l:'Alojamiento', i:'🏨'},
+  {k:'shopping', l:'Shopping', i:'🛍️'},
+  {k:'otros', l:'Otros', i:'✨'}
+];
+
+
+/* ============================================================
+   ESTADO · una sola escritora, todas las demás mirando
+   ============================================================ */
+const REPO = { owner:'marialuisa-melonn', name:'chicago', branch:'main', file:'data.json' };
+const RAW = `https://raw.githubusercontent.com/${REPO.owner}/${REPO.name}/${REPO.branch}/${REPO.file}`;
+const API = `https://api.github.com/repos/${REPO.owner}/${REPO.name}/contents/${REPO.file}`;
+
+const State = {
+  admin:false, token:'', dirty:false, updatedAt:null, sha:null,
+  cfg:{ budget:9000, rate:4000, showCop:false, people:9 },
+  expenses:[], todos:[], done:{}, decisions:{},
+  day:0
+};
+
+const $ = s => document.querySelector(s);
+const money = n => '$' + Math.round(n).toLocaleString('en-US');
+const cop = n => '$' + Math.round(n * (State.cfg.rate||4000)).toLocaleString('es-CO');
+const esc = s => String(s==null?'':s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+const safeGet = k => { try{ return localStorage.getItem(k) || ''; }catch(e){ return ''; } };
+const safeSet = (k,v) => { try{ localStorage.setItem(k,v); }catch(e){} };
+const safeDel = k => { try{ localStorage.removeItem(k); }catch(e){} };
+
+/* ---------- sincronización ---------- */
+function ghHeaders(){
+  return { 'Authorization':'Bearer ' + State.token, 'Accept':'application/vnd.github+json',
+           'Content-Type':'application/json', 'X-GitHub-Api-Version':'2022-11-28' };
+}
+function b64(str){
+  const bytes = new TextEncoder().encode(str);
+  let bin = ''; bytes.forEach(b => bin += String.fromCharCode(b));
+  return btoa(bin);
+}
+function payload(){
+  return { v:1, updatedAt:new Date().toISOString(), cfg:State.cfg,
+           expenses:State.expenses, todos:State.todos, done:State.done, decisions:State.decisions };
+}
+function applyData(j){
+  if(!j || typeof j !== 'object') return;
+  if(j.cfg) Object.assign(State.cfg, j.cfg);
+  State.expenses  = Array.isArray(j.expenses)  ? j.expenses  : [];
+  State.todos     = Array.isArray(j.todos)     ? j.todos     : [];
+  State.done      = (j.done && typeof j.done==='object')           ? j.done      : {};
+  State.decisions = (j.decisions && typeof j.decisions==='object') ? j.decisions : {};
+  State.updatedAt = j.updatedAt || null;
+}
+
+let synTimer = null;
+function setSyn(kind, extra){
+  const dot = $('#synDot'), txt = $('#synTxt');
+  dot.className = 'dot';
+  const ago = () => {
+    if(!State.updatedAt) return '';
+    const m = Math.round((Date.now() - new Date(State.updatedAt))/60000);
+    if(m < 1) return 'hace un momento';
+    if(m < 60) return 'hace ' + m + ' min';
+    const h = Math.round(m/60);
+    if(h < 24) return 'hace ' + h + (h===1?' hora':' horas');
+    const d = Math.round(h/24);
+    return 'hace ' + d + (d===1?' día':' días');
+  };
+  if(kind==='loading'){ txt.textContent = 'Cargando…'; }
+  else if(kind==='ok'){ dot.classList.add('live'); txt.textContent = (State.admin?'Tú administras · ':'Al día · ') + ('actualizado ' + (ago()||'ahora')); }
+  else if(kind==='pending'){ dot.classList.add('warn'); txt.textContent = 'Cambios sin guardar…'; }
+  else if(kind==='saving'){ dot.classList.add('warn'); txt.textContent = 'Guardando…'; }
+  else if(kind==='saved'){ dot.classList.add('live'); txt.textContent = 'Guardado · ya lo ven todas'; clearTimeout(synTimer); synTimer = setTimeout(()=>setSyn('ok'), 3200); }
+  else if(kind==='error'){ dot.classList.add('bad'); txt.textContent = 'No se pudo guardar' + (extra?' · '+extra:''); }
+  else if(kind==='offline'){ dot.classList.add('bad'); txt.textContent = 'Sin conexión · mostrando lo último'; }
+}
+
+async function loadData(silent){
+  if(!silent) setSyn('loading');
+  try{
+    const r = await fetch(RAW + '?t=' + Date.now(), { cache:'no-store' });
+    if(!r.ok) throw new Error(r.status);
+    applyData(await r.json());
+    setSyn('ok');
+  }catch(e){
+    setSyn(State.updatedAt ? 'ok' : 'offline');
+  }
+  renderAll();
+}
+
+let saveT = null;
+function queueSave(msg){
+  if(!State.admin) return;
+  State.dirty = true; setSyn('pending');
+  clearTimeout(saveT);
+  saveT = setTimeout(()=>pushData(msg), 1200);
+}
+async function pushData(msg){
+  if(!State.admin || !State.token) return;
+  setSyn('saving');
+  try{
+    let sha = null;
+    const r0 = await fetch(API + '?ref=' + REPO.branch + '&t=' + Date.now(), { headers: ghHeaders(), cache:'no-store' });
+    if(r0.ok) sha = (await r0.json()).sha;
+    else if(r0.status !== 404) throw new Error('lectura ' + r0.status);
+
+    const body = { message: msg || 'Actualizar la vaca', branch: REPO.branch,
+                   content: b64(JSON.stringify(payload(), null, 2)) };
+    if(sha) body.sha = sha;
+
+    const r = await fetch(API, { method:'PUT', headers: ghHeaders(), body: JSON.stringify(body) });
+    if(!r.ok){
+      if(r.status===401 || r.status===403) throw new Error('token inválido o vencido');
+      if(r.status===409) { await loadData(true); throw new Error('hubo otro cambio, recargué'); }
+      throw new Error('error ' + r.status);
+    }
+    State.dirty = false; State.updatedAt = new Date().toISOString();
+    setSyn('saved');
+  }catch(e){
+    setSyn('error', e.message);
+    toast('No se guardó: ' + e.message);
+  }
+}
+
+/* ---------- acciones (solo administradora) ---------- */
+function addExpenseLocal(e){ State.expenses.unshift({ id:uid(), ...e, at:Date.now() }); renderBote(); renderHoy(); queueSave('Gasto: ' + (e.what||'')); }
+function delExpenseLocal(id){ State.expenses = State.expenses.filter(x=>x.id!==id); renderBote(); renderHoy(); queueSave('Borrar gasto'); }
+function setDone(id, val){ if(val) State.done[id] = true; else delete State.done[id]; renderDay(); renderHoy(); renderMeta(); queueSave('Marcar plan'); }
+function addTodoLocal(t){ State.todos.push({ id:uid(), t, m:'', done:false, ord:Date.now() }); renderTodos(); renderHoy(); queueSave('Nuevo pendiente'); }
+function setTodoLocal(id, done){ const x = State.todos.find(y=>y.id===id); if(x) x.done = done; renderTodos(); renderHoy(); queueSave('Pendiente'); }
+function delTodoLocal(id){ State.todos = State.todos.filter(x=>x.id!==id); renderTodos(); renderHoy(); queueSave('Borrar pendiente'); }
+function setDecision(pollId, opt){ State.decisions[pollId] = (State.decisions[pollId]===opt ? null : opt); renderPolls(); renderDay(); queueSave('Decisión'); }
+function saveCfgLocal(patch){ Object.assign(State.cfg, patch); renderBote(); renderHoy(); queueSave('Ajustes de la vaca'); }
+
+/* ---------- toast ---------- */
+let toastT = null;
+function toast(msg){
+  const t = $('#toast'); t.textContent = msg; t.classList.add('on');
+  clearTimeout(toastT); toastT = setTimeout(()=>t.classList.remove('on'), 3400);
+}
+
+/* ============================================================
+   SKYLINE
+   ============================================================ */
+function drawSkyline(){
+  const svg = $('#sky');
+  const B = [
+    {x:6,w:26,h:44},{x:34,w:16,h:60},{x:52,w:20,h:36},
+    {x:76,w:13,h:70},{x:89,w:13,h:96},{x:102,w:13,h:112},{x:115,w:13,h:96},{x:128,w:13,h:66},
+    {x:146,w:18,h:48},{x:166,w:12,h:62},
+    {x:182,w:22,h:74,r:11},{x:208,w:22,h:74,r:11},
+    {x:234,w:16,h:40},{x:252,w:24,h:88},
+    {x:280,w:14,h:52},{x:296,w:20,h:64},
+    {x:320,w:30,h:104,taper:8},
+    {x:354,w:16,h:46},{x:372,w:22,h:70},{x:398,w:18,h:86},
+    {x:420,w:26,h:50},{x:448,w:14,h:64},{x:464,w:22,h:38},{x:490,w:24,h:56}
+  ];
+  const G = 124, parts = [];
+  parts.push('<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sky-1)"/><stop offset="1" stop-color="var(--sky-2)"/></linearGradient></defs>');
+  B.forEach((b,i)=>{
+    const y = G - b.h;
+    if(b.taper){
+      const t = b.taper;
+      parts.push(`<polygon points="${b.x},${G} ${b.x+t},${y} ${b.x+b.w-t},${y} ${b.x+b.w},${G}" fill="url(#bg)" opacity="${.86-(i%3)*.06}"/>`);
+      parts.push(`<rect x="${b.x+t+4}" y="${y-13}" width="1.6" height="13" fill="url(#bg)" opacity=".8"/><rect x="${b.x+b.w-t-6}" y="${y-13}" width="1.6" height="13" fill="url(#bg)" opacity=".8"/>`);
+    } else {
+      parts.push(`<rect x="${b.x}" y="${y}" width="${b.w}" height="${b.h}" rx="${b.r||1}" fill="url(#bg)" opacity="${.88-(i%3)*.06}"/>`);
+    }
+    if(i===5){ parts.push(`<rect x="${b.x+3}" y="${y-17}" width="1.6" height="17" fill="url(#bg)" opacity=".75"/><rect x="${b.x+b.w-4}" y="${y-17}" width="1.6" height="17" fill="url(#bg)" opacity=".75"/>`); }
+    const cols = Math.max(1, Math.floor(b.w/7)), rows = Math.max(1, Math.floor(b.h/11));
+    for(let c=0;c<cols;c++) for(let r=0;r<rows;r++){
+      if(Math.random() > .42) continue;
+      const wx = b.x+3+c*7, wy = y+6+r*11;
+      if(wx+2 > b.x+b.w-2 || wy+3 > G-3) continue;
+      const fl = Math.random() > .88 ? ' class="win" style="animation-delay:'+(Math.random()*7).toFixed(1)+'s"' : '';
+      parts.push(`<rect x="${wx}" y="${wy}" width="2.6" height="3.4"${fl} fill="var(--brass)" opacity="${(.28+Math.random()*.5).toFixed(2)}"/>`);
+    }
+  });
+  parts.push(`<rect x="0" y="${G}" width="520" height="8" fill="var(--sky-3)" opacity=".28"/>`);
+  svg.innerHTML = parts.join('');
+  let s = '';
+  for(let i=0;i<26;i++) s += `<i style="left:${(Math.random()*100).toFixed(1)}%;top:${(Math.random()*46).toFixed(1)}%;animation-delay:${(Math.random()*4).toFixed(1)}s"></i>`;
+  $('#stars').innerHTML = s;
+}
+const STAR6 = '<svg viewBox="0 0 24 24"><path d="M12 0l2.6 7.6L22 5.2l-4.8 6.3L22 17.8l-7.4-2.4L12 23l-2.6-7.6L2 17.8l4.8-6.3L2 5.2l7.4 2.4z"/></svg>';
+
+/* ============================================================
+   NAV
+   ============================================================ */
+const TABS = [
+  {k:'hoy',   l:'Hoy',   p:'M3 12h4l3 8 4-16 3 8h4'},
+  {k:'plan',  l:'Plan',  p:'M8 2v4M16 2v4M3 9h18M5 5h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2z'},
+  {k:'bote',  l:'Vaca',  p:'M12 2v20M17 6H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6'},
+  {k:'clima', l:'Clima', p:'M17.5 19a4.5 4.5 0 10-.9-8.9A6 6 0 106.5 19h11z'},
+  {k:'extras',l:'Extras',p:'M9 11l3 3 8-8M20 12v7a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9'}
+];
+function buildTabs(){
+  $('#tabbar').innerHTML = TABS.map((t,i)=>`<button class="tabbtn" role="tab" data-tab="${t.k}" aria-selected="${i===0}" aria-controls="p-${t.k}"><svg viewBox="0 0 24 24"><path d="${t.p}"/></svg><span>${t.l}</span></button>`).join('');
+  $('#tabbar').addEventListener('click', e=>{ const b = e.target.closest('[data-tab]'); if(b) go(b.dataset.tab); });
+}
+function go(k){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on', p.id==='p-'+k));
+  document.querySelectorAll('.tabbtn').forEach(b=>b.setAttribute('aria-selected', b.dataset.tab===k));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ============================================================
+   HOY
+   ============================================================ */
+function tripPos(){
+  const today = new Date(); today.setHours(0,0,0,0);
+  const s = new Date(TRIP.start+'T00:00:00'), e = new Date(TRIP.end+'T00:00:00');
+  const day = Math.round((today - s)/86400000);
+  if(today < s) return {phase:'antes', left: Math.round((s-today)/86400000)};
+  if(today > e) return {phase:'despues', left:0};
+  return {phase:'durante', idx:day};
+}
+function renderCountdown(){
+  const p = tripPos();
+  if(p.phase==='antes'){ $('#cdNum').textContent = p.left; $('#cdLbl').textContent = p.left===1?'día para irnos':'días para irnos'; }
+  else if(p.phase==='durante'){ $('#cdNum').textContent = (p.idx+1)+'/7'; $('#cdLbl').textContent = 'día del viaje'; }
+  else { $('#cdNum').textContent = '♥'; $('#cdLbl').textContent = 'ya volvimos'; }
+}
+function renderMeta(){
+  const all = DAYS.flatMap(d=>d.events);
+  $('#mSpots').textContent = all.length;
+  $('#mOk').textContent = all.filter(e=>e.status==='ok').length;
+  $('#mFalta').textContent = all.filter(e=>e.status==='falta').length + Object.values(State.decisions||{}).filter(v=>!v).length + POLLS.filter(p=>!(p.id in (State.decisions||{}))).length;
+}
+function renderHoy(){
+  const p = tripPos();
+  let head, d;
+  if(p.phase==='durante'){ d = DAYS[p.idx]; head = `<div class="dayhead"><div class="kicker">Hoy · ${d.dow} ${d.dm} · ${esc(d.hood)}</div><h3>${esc(d.title)}</h3></div>`; }
+  else if(p.phase==='antes'){ d = DAYS[0]; head = `<div class="dayhead"><div class="kicker">Faltan ${p.left} ${p.left===1?'día':'días'} · empieza el ${d.dow} ${d.dm}</div><h3>${esc(d.title)}</h3></div>`; }
+  else { d = DAYS[6]; head = `<div class="dayhead"><div class="kicker">El viaje terminó</div><h3>Siete días bien usados</h3></div>`; }
+
+  const pend = DAYS.flatMap(x=>x.events).filter(e=>e.status==='falta');
+  const openTodos = State.todos.filter(t=>!t.done);
+  const spent = State.expenses.reduce((a,b)=>a+(+b.amt||0),0);
+  const pct = State.cfg.budget ? Math.min(100, spent/State.cfg.budget*100) : 0;
+  const wi = p.phase==='durante' ? p.idx : 0;
+
+  $('#hoyBody').innerHTML = `
+    ${head}
+    <div class="daytags">
+      <span class="ltag"><i style="background:${d.el.color}"></i>${esc(d.el.name)}</span>
+      <span class="ltag">${esc(d.walk)}</span>
+      <span class="ltag">${WEATHER[wi].hi}° / ${WEATHER[wi].lo}°</span>
+    </div>
+    ${renderTimeline(d)}
+    <button class="btn ghost" style="width:100%" onclick="go('plan');selectDay(${DAYS.indexOf(d)})">Ver los siete días →</button>
+
+    <div class="sec-head"><h2>Sin cerrar</h2><span class="hint">${pend.length + openTodos.length} sueltos</span></div>
+    <div class="card" style="padding:13px">
+      ${pend.length ? `<div style="font-family:var(--fm);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--star);margin-bottom:7px">Reservas sin cerrar</div>
+      ${pend.map(e=>`<div style="display:flex;gap:8px;align-items:baseline;padding:5px 0;font-size:13.5px"><span style="font-family:var(--fm);font-size:11px;color:var(--muted);flex-shrink:0">${e.time}</span><span>${esc(e.title)}</span></div>`).join('')}` : `<p class="note">Todas las reservas están cerradas. 🎉</p>`}
+      ${openTodos.length ? `<div style="font-family:var(--fm);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:13px 0 7px">Pendientes</div>
+      ${openTodos.slice(0,4).map(t=>`<div style="font-size:13.5px;padding:4px 0;color:var(--text-2)">${esc(t.t)}</div>`).join('')}` : ''}
+      <button class="btn ghost sm" style="margin-top:11px" onclick="go('extras')">Abrir pendientes</button>
+    </div>
+
+    <div class="sec-head"><h2>La vaca</h2><span class="hint">${Math.round(pct)}% usado</span></div>
+    <div class="card" style="padding:14px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px">
+        <div><div style="font-family:var(--fm);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">Queda</div>
+        <div style="font-family:var(--fd);font-weight:800;font-size:38px;line-height:.95;font-variant-numeric:tabular-nums">${money(Math.max(0,State.cfg.budget - spent))}</div></div>
+        <div style="text-align:right"><div style="font-family:var(--fm);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">Gastado</div>
+        <div style="font-family:var(--fm);font-size:16px;font-variant-numeric:tabular-nums">${money(spent)}</div></div>
+      </div>
+      <div style="height:9px;background:var(--surface-3);border-radius:100px;overflow:hidden;margin-top:11px"><i style="display:block;height:100%;width:${pct}%;background:${pct>90?'var(--star)':'var(--brass)'};border-radius:100px;transition:width .9s cubic-bezier(.22,.9,.3,1)"></i></div>
+      <button class="btn ghost sm" style="margin-top:12px" onclick="go('bote')">Ver la vaca</button>
+    </div>
+    <div class="foot">Chicago los espera.</div>`;
+}
+
+/* ============================================================
+   ITINERARIO
+   ============================================================ */
+function statusPill(e){
+  if(e.status==='ok')    return `<span class="pill ok"><span class="star">${STAR6}</span>Confirmado</span>`;
+  if(e.status==='falta') return `<span class="pill falta">Falta reservar</span>`;
+  if(e.status==='voto'){
+    const dec = State.decisions[e.poll];
+    if(dec){
+      const p = POLLS.find(x=>x.id===e.poll), o = p && p.options.find(x=>x.k===dec);
+      if(o) return `<span class="pill ok"><span class="star">${STAR6}</span>${esc(o.l)}</span>`;
+    }
+    return `<span class="pill voto">Por decidir</span>`;
+  }
+  return `<span class="pill plan">Libre</span>`;
+}
+function renderTimeline(d){
+  return '<div class="tl">' + d.events.map((e,i)=>{
+    const done = !!State.done[e.id];
+    return `
+    <div class="ev s-${e.status} ${done?'done':''}" style="animation-delay:${i*55}ms">
+      <div class="time">${e.time}</div><div class="node"></div>
+      <div class="evcard">
+        <div class="evtop">
+          <div style="min-width:0"><div class="evslot">${esc(e.slot)}</div>
+          <div class="evtitle">${e.tag?e.tag+' ':''}${esc(e.title)}</div></div>
+          ${statusPill(e)}
+        </div>
+        <div class="evwhere">${esc(e.where)}</div>
+        ${e.sub?`<ul class="evsub">${e.sub.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}
+        <div class="evacts">
+          ${e.map?`<a class="linkbtn" href="${MAPQ(e.map)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Mapa</a>`:''}
+          ${e.url?`<a class="linkbtn" href="${e.url}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>Sitio</a>`:''}
+          ${e.poll?`<button class="linkbtn" onclick="go('extras');setTimeout(()=>document.getElementById('${e.poll}')?.scrollIntoView({behavior:'smooth',block:'center'}),320)"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>Ver opciones</button>`:''}
+          ${State.admin
+            ? `<button class="chk" data-done="${e.id}" aria-pressed="${done}"><b></b>${done?'Hecho':'Marcar'}</button>`
+            : (done ? `<span class="chk ro"><b></b>Hecho</span>` : '')}
+        </div>
+      </div>
+    </div>`;
+  }).join('') + '</div>';
+}
+function buildRail(){
+  $('#dayrail').innerHTML = DAYS.map((d,i)=>{
+    const dots = d.events.map(e=>`<i class="${e.status==='ok'?'ok':(e.status==='falta'||e.status==='voto')?'falta':''}"></i>`).join('');
+    return `<button class="daychip" role="tab" data-day="${i}" aria-selected="${i===State.day}"><div class="dw">${d.dow.slice(0,3)}</div><div class="dn">${d.date.slice(8)}</div><div class="dm">sep</div><div class="dots">${dots}</div></button>`;
+  }).join('');
+  $('#dayrail').addEventListener('click', e=>{ const b = e.target.closest('[data-day]'); if(b) selectDay(+b.dataset.day); });
+}
+function selectDay(i){
+  State.day = i;
+  document.querySelectorAll('.daychip').forEach(c=>c.setAttribute('aria-selected', +c.dataset.day===i));
+  document.querySelector(`.daychip[data-day="${i}"]`)?.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+  renderDay();
+}
+function renderDay(){
+  const d = DAYS[State.day];
+  const done = d.events.filter(e=>State.done[e.id]).length;
+  $('#dayBody').innerHTML = `
+    <div class="dayhead"><div class="kicker">Día ${d.n} · ${d.dow} ${d.dm} · ${esc(d.hood)}</div><h3>${esc(d.title)}</h3></div>
+    <div class="daytags">
+      <span class="ltag"><i style="background:${d.el.color}"></i>${esc(d.el.name)}</span>
+      <span class="ltag">${esc(d.walk)}</span>
+      <span class="ltag">${WEATHER[State.day].hi}° / ${WEATHER[State.day].lo}° · ${esc(WEATHER[State.day].c)}</span>
+      ${done?`<span class="ltag" style="color:var(--brass)">${done}/${d.events.length} hecho</span>`:''}
+    </div>
+    ${renderTimeline(d)}`;
+  $('#planFoot').innerHTML = State.admin
+    ? 'Toca el cuadrito para tachar lo que ya hicieron.<br>Se guarda y todas lo ven.'
+    : 'María Luisa va tachando lo que ya hicieron.<br>Refresca para ver lo último.';
+}
+
+/* ============================================================
+   VACA
+   ============================================================ */
+function renderBote(){
+  const spent = State.expenses.reduce((a,b)=>a+(+b.amt||0),0);
+  const b = +State.cfg.budget || 0, left = b - spent;
+  const pct = b ? Math.min(100, spent/b*100) : 0, C = 2*Math.PI*80;
+
+  $('#ringFill').style.strokeDashoffset = C - (C*pct/100);
+  $('#ringFill').style.stroke = pct>85 ? 'var(--star)' : 'var(--brass)';
+  $('#ringAmt').textContent = money(Math.max(0,left));
+  $('#ringAmt').style.color = left < 0 ? 'var(--star)' : '';
+  $('#ringAlt').textContent = 'de ' + money(b) + (State.cfg.showCop ? ' · ' + cop(b) : '');
+  $('#fSpent').textContent = money(spent);
+  $('#fPer').textContent = money(spent / (State.cfg.people||9));
+  $('#fBudget').textContent = money(b);
+  $('#expCount').textContent = State.expenses.length + (State.expenses.length===1?' gasto':' gastos');
+
+  const p = tripPos();
+  $('#fDays').textContent = p.phase==='antes' ? '7 por delante' : p.phase==='durante' ? (7-p.idx) + ' restantes' : 'terminado';
+
+  $('#ringNote').innerHTML = !State.expenses.length
+    ? (State.admin ? 'Sin gastos todavía. Registra lo que vayas pagando y todas lo ven.' : 'Sin gastos todavía.')
+    : left < 0 ? `Se pasaron <b style="color:var(--star)">${money(-left)}</b> del presupuesto.`
+    : `Van en <b>${Math.round(pct)}%</b> de la vaca${State.cfg.showCop?` · quedan ${cop(left)}`:''}.`;
+
+  const totals = CATS.map(c=>({...c, v: State.expenses.filter(e=>e.cat===c.k).reduce((a,x)=>a+(+x.amt||0),0)}));
+  const max = Math.max(1, ...totals.map(t=>t.v));
+  $('#catBox').innerHTML = totals.every(t=>!t.v)
+    ? `<p class="note" style="padding:6px 0">Cuando haya gastos, aquí se ve en qué se está yendo la vaca.</p>`
+    : totals.filter(t=>t.v>0).sort((a,b)=>b.v-a.v).map(t=>`
+      <div class="catbar"><span class="cn">${t.i} ${t.l}</span>
+      <span class="ct"><i style="width:${(t.v/max*100).toFixed(1)}%"></i></span>
+      <span class="cv">${money(t.v)}</span></div>`).join('');
+
+  $('#expList').innerHTML = !State.expenses.length
+    ? `<div class="empty"><div class="big">🐮 La vaca está intacta</div><div class="note">${State.admin?'Toca “Registrar gasto” apenas paguen algo.':'Todavía no hay movimientos.'}</div></div>`
+    : State.expenses.map(e=>{
+        const c = CATS.find(x=>x.k===e.cat) || CATS[5];
+        const dt = new Date(e.at||Date.now());
+        return `<div class="exp"><div class="ei">${c.i}</div>
+          <div class="em"><div class="et">${esc(e.what||'Gasto')}</div>
+          <div class="es">${esc(e.who||'—')} · ${dt.getDate()}/${dt.getMonth()+1}${State.cfg.showCop?' · '+cop(e.amt):''}</div></div>
+          <div class="ev2">${money(e.amt)}</div>
+          ${State.admin?`<button class="del" data-del="${e.id}" aria-label="Borrar gasto">✕</button>`:''}
+        </div>`;
+      }).join('');
+}
+
+/* ============================================================
+   CLIMA
+   ============================================================ */
+function renderWeather(){
+  const p = tripPos();
+  const lo = Math.min(...WEATHER.map(w=>w.lo)), hi = Math.max(...WEATHER.map(w=>w.hi)), span = hi - lo;
+  $('#wBox').innerHTML = WEATHER.map((w,i)=>{
+    const l = ((w.lo-lo)/span)*100, r = ((w.hi-lo)/span)*100;
+    return `<div class="wrow ${p.phase==='durante'&&p.idx===i?'now':''}">
+      <div class="wd"><b>${w.n}</b>${w.d}</div>
+      <div><div class="wbar"><i style="left:${l.toFixed(1)}%;width:${Math.max(8,r-l).toFixed(1)}%"></i></div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px">${esc(w.c)}</div></div>
+      <div class="wt">${w.hi}° <span class="lo">/ ${w.lo}°</span><div style="font-size:10px;color:var(--muted);margin-top:2px">${Math.round(w.hi*9/5+32)}°/${Math.round(w.lo*9/5+32)}°F</div></div>
+    </div>`;
+  }).join('');
+  $('#packBox').innerHTML = PACK.map(([i,t])=>`<li><span class="pi">${i}</span><span>${t}</span></li>`).join('');
+  $('#tipBox').innerHTML = TIPS.map(([i,t])=>`<li><span class="pi">${i}</span><span>${t}</span></li>`).join('');
+}
+
+/* ============================================================
+   DECISIONES Y PENDIENTES
+   ============================================================ */
+function renderPolls(){
+  const sin = POLLS.filter(p=>!State.decisions[p.id]).length;
+  $('#decHint').textContent = sin ? sin + (sin===1?' sin decidir':' sin decidir') : 'todo decidido';
+  $('#pollBox').innerHTML = POLLS.map(p=>{
+    const dec = State.decisions[p.id];
+    return `<div class="card poll" id="${p.id}" style="margin-bottom:11px">
+      <h4>${esc(p.title)}</h4>
+      <div class="q">${esc(p.q)}</div>
+      ${p.options.map(o=>{
+        const on = dec===o.k;
+        return `<${State.admin?'button':'div'} class="opt ${on?'mine':''} ${State.admin?'':'ro'}" ${State.admin?`data-dec="${p.id}|${o.k}"`:''}>
+          <span class="oin"><span><span class="ol">${esc(o.l)}</span><span class="od">${esc(o.d)}</span></span>
+          ${on?`<span class="oc chosen">Elegido</span>`:''}</span>
+        </${State.admin?'button':'div'}>`;
+      }).join('')}
+      <div class="note" style="margin-top:5px">${dec ? 'Decidido.' : (State.admin ? 'Toca la opción que ganó.' : 'Todavía sin decidir.')}</div>
+    </div>`;
+  }).join('');
+}
+function renderTodos(){
+  const open = State.todos.filter(t=>!t.done).length;
+  $('#todoCount').textContent = open ? open + ' abiertos' : 'todo listo';
+  $('#todoBox').innerHTML = !State.todos.length
+    ? `<div class="empty"><div class="big">Nada pendiente</div></div>`
+    : State.todos.map(t=>`<div class="todo ${t.done?'done':''}">
+        ${State.admin?`<button class="tb" data-todo="${t.id}" aria-pressed="${!!t.done}" aria-label="Marcar"></button>`:`<span class="tb ro"></span>`}
+        <div class="tt">${esc(t.t)}${t.m?`<div class="tm">${esc(t.m)}</div>`:''}</div>
+        ${State.admin?`<button class="del" data-todel="${t.id}" aria-label="Borrar">✕</button>`:''}
+      </div>`).join('');
+}
+
+/* ============================================================
+   SHEETS
+   ============================================================ */
+function openSheet(html){ $('#sheet').innerHTML = '<div class="grab"></div>' + html; $('#scrim').classList.add('on'); }
+function closeSheet(){ $('#scrim').classList.remove('on'); }
+$('#scrim').addEventListener('click', e=>{ if(e.target.id==='scrim') closeSheet(); });
+
+function openExpense(){
+  openSheet(`<h3>Registrar gasto</h3>
+    <label class="field"><span class="fl">¿Qué fue?</span><input id="exWhat" placeholder="Cena en Girl & the Goat"></label>
+    <div class="row2">
+      <label class="field"><span class="fl">Monto (USD)</span><input id="exAmt" type="number" inputmode="decimal" step="0.01" placeholder="0.00"></label>
+      <label class="field"><span class="fl">Categoría</span><select id="exCat">${CATS.map(c=>`<option value="${c.k}">${c.i} ${c.l}</option>`).join('')}</select></label>
+    </div>
+    <label class="field"><span class="fl">¿Quién pagó?</span><input id="exWho" placeholder="María Luisa"></label>
+    <button class="btn" style="width:100%;margin-top:4px" id="exOk">Echar a la vaca</button>`);
+  setTimeout(()=>$('#exWhat').focus(), 120);
+  $('#exOk').onclick = ()=>{
+    const amt = parseFloat($('#exAmt').value);
+    if(!amt || amt<=0){ $('#exAmt').focus(); return; }
+    addExpenseLocal({ what:$('#exWhat').value.trim()||'Gasto', amt, cat:$('#exCat').value, who:$('#exWho').value.trim()||'—' });
+    closeSheet(); burstAt(window.innerWidth/2, window.innerHeight*0.4);
+  };
+}
+function openConfig(){
+  openSheet(`<h3>Ajustes de la vaca</h3>
+    <label class="field"><span class="fl">Presupuesto total del grupo (USD)</span><input id="cfB" type="number" step="1" value="${State.cfg.budget}"></label>
+    <div class="row2">
+      <label class="field"><span class="fl">¿Cuántas van?</span><input id="cfP" type="number" step="1" min="1" value="${State.cfg.people||9}"></label>
+      <label class="field"><span class="fl">Dólar (COP)</span><input id="cfR" type="number" step="1" value="${State.cfg.rate}"></label>
+    </div>
+    <label style="display:flex;align-items:center;gap:10px;padding:11px 12px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;margin-bottom:12px;cursor:pointer">
+      <input type="checkbox" id="cfC" ${State.cfg.showCop?'checked':''} style="width:18px;height:18px;accent-color:var(--brass)">
+      <span style="font-size:14px">Mostrar también en pesos colombianos</span></label>
+    <button class="btn" style="width:100%" id="cfOk">Guardar</button>`);
+  $('#cfOk').onclick = ()=>{
+    saveCfgLocal({ budget:parseFloat($('#cfB').value)||0, people:parseInt($('#cfP').value)||9,
+                   rate:parseFloat($('#cfR').value)||4000, showCop:$('#cfC').checked });
+    closeSheet();
+  };
+}
+function openAdmin(){
+  if(State.admin){
+    openSheet(`<h3>Modo administradora</h3>
+      <p class="note" style="margin-bottom:14px">Estás administrando. Tus cambios se guardan en el repo y las demás los ven al refrescar.</p>
+      <button class="btn ghost" style="width:100%" id="adOut">Salir del modo administradora</button>`);
+    $('#adOut').onclick = ()=>{ State.token=''; State.admin=false; safeDel('chi_gh'); document.body.classList.remove('is-admin'); closeSheet(); renderAll(); toast('Saliste del modo administradora'); };
+    return;
+  }
+  openSheet(`<h3>Modo administradora</h3>
+    <p class="note" style="margin-bottom:12px">Solo para María Luisa. Pega aquí tu token de GitHub: se guarda <b>únicamente en este celular</b> y nunca se manda a ningún otro lado.</p>
+    <label class="field"><span class="fl">Token</span><input id="adTok" type="password" placeholder="github_pat_…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></label>
+    <button class="btn" style="width:100%" id="adOk">Entrar</button>
+    <p class="note" style="margin-top:12px">Si no eres tú, cierra esta ventana: sin token la app funciona igual, solo que de lectura.</p>`);
+  setTimeout(()=>$('#adTok').focus(), 120);
+  $('#adOk').onclick = async ()=>{
+    const t = $('#adTok').value.trim();
+    if(!t) return;
+    const btn = $('#adOk'); btn.textContent = 'Comprobando…';
+    try{
+      State.token = t;
+      const r = await fetch(API + '?ref=' + REPO.branch + '&t=' + Date.now(), { headers: ghHeaders(), cache:'no-store' });
+      if(!r.ok && r.status !== 404) throw new Error(r.status===401||r.status===403 ? 'El token no sirve o no tiene permiso sobre este repo.' : 'Error ' + r.status);
+      State.admin = true; safeSet('chi_gh', t);
+      document.body.classList.add('is-admin');
+      closeSheet(); renderAll(); setSyn('ok'); toast('Listo. Ya puedes registrar gastos.');
+    }catch(e){
+      State.token = ''; btn.textContent = 'Entrar'; toast(e.message);
+    }
+  };
+  $('#adTok').addEventListener('keydown', e=>{ if(e.key==='Enter') $('#adOk').click(); });
+}
+
+/* ============================================================
+   BURST
+   ============================================================ */
+function burstAt(x,y){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const b = document.createElement('div');
+  b.className='burst'; b.style.left=x+'px'; b.style.top=y+'px';
+  const cols=['var(--brass)','var(--lake)','var(--star)'];
+  for(let i=0;i<16;i++){
+    const s=document.createElement('i'); s.innerHTML = STAR6;
+    s.querySelector('svg').style.fill = cols[i%3];
+    const a = (Math.PI*2*i/16) + Math.random()*.4, d = 46+Math.random()*74;
+    s.animate([{transform:'translate(0,0) scale(.3) rotate(0deg)', opacity:1},
+      {transform:`translate(${Math.cos(a)*d}px,${Math.sin(a)*d-24}px) scale(${.7+Math.random()*.7}) rotate(${180+Math.random()*220}deg)`, opacity:0}],
+      {duration:720+Math.random()*380, easing:'cubic-bezier(.2,.7,.3,1)', fill:'forwards'});
+    b.appendChild(s);
+  }
+  document.body.appendChild(b);
+  setTimeout(()=>b.remove(), 1300);
+}
+
+/* ============================================================
+   EVENTOS
+   ============================================================ */
+document.addEventListener('click', e=>{
+  const chk = e.target.closest('[data-done]');
+  if(chk){ const id = chk.dataset.done, now = !State.done[id];
+    if(now){ const r = chk.getBoundingClientRect(); burstAt(r.left+r.width/2, r.top+r.height/2); }
+    setDone(id, now); return; }
+  const dec = e.target.closest('[data-dec]');
+  if(dec){ const [p,o] = dec.dataset.dec.split('|'); setDecision(p,o); return; }
+  const td = e.target.closest('[data-todo]');
+  if(td){ const t = State.todos.find(x=>x.id===td.dataset.todo); if(t) setTodoLocal(t.id, !t.done); return; }
+  const tdel = e.target.closest('[data-todel]');
+  if(tdel){ delTodoLocal(tdel.dataset.todel); return; }
+  const del = e.target.closest('[data-del]');
+  if(del){ if(confirm('¿Borrar este gasto?')) delExpenseLocal(del.dataset.del); return; }
+});
+$('#addExpBtn').onclick = openExpense;
+$('#cfgBtn').onclick = openConfig;
+$('#adminBtn').onclick = openAdmin;
+$('#synRef').onclick = ()=>loadData();
+$('#todoAdd').onclick = ()=>{ const v = $('#todoInput').value.trim(); if(!v) return; $('#todoInput').value=''; addTodoLocal(v); };
+$('#todoInput').addEventListener('keydown', e=>{ if(e.key==='Enter') $('#todoAdd').click(); });
+window.go = go; window.selectDay = selectDay;
+
+/* ============================================================
+   ARRANQUE
+   ============================================================ */
+function renderAll(){
+  renderCountdown(); renderMeta(); renderDay(); renderHoy();
+  renderBote(); renderTodos(); renderPolls();
+}
+(function boot(){
+  const t = safeGet('chi_gh');
+  if(t){ State.token = t; State.admin = true; document.body.classList.add('is-admin'); }
+  drawSkyline(); buildTabs(); buildRail(); renderWeather();
+  const p = tripPos();
+  State.day = p.phase==='durante' ? p.idx : 0;
+  selectDay(State.day);
+  renderAll();
+  loadData();
+  setInterval(()=>{ if(!State.dirty && document.visibilityState==='visible') loadData(true); }, 60000);
+  document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='visible' && !State.dirty) loadData(true); });
+})();
+
+</script>
+</body>
+</html>
