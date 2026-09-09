@@ -1,0 +1,71 @@
+{
+  "v": 1,
+  "updatedAt": "2026-09-09T20:14:30.054319Z",
+  "cfg": {
+    "budget": 9000,
+    "rate": 4000,
+    "showCop": false,
+    "people": 9
+  },
+  "expenses": [],
+  "todos": [
+    {
+      "id": "t1",
+      "t": "Reservar Gilt Bar para el domingo 7:00 pm",
+      "m": "Día 1 · estaba marcado en rojo en la hoja",
+      "done": false,
+      "ord": 1
+    },
+    {
+      "id": "t2",
+      "t": "Comprar el City Pass o los tickets del Architecture Boat Tour",
+      "m": "Día 2 · se agota, comprar antes de viajar",
+      "done": false,
+      "ord": 2
+    },
+    {
+      "id": "t3",
+      "t": "Confirmar si las reservas van para 7 personas o para las 9",
+      "m": "Las 5 reservas confirmadas están hechas para 7",
+      "done": false,
+      "ord": 3
+    },
+    {
+      "id": "t4",
+      "t": "Reservar Girl & the Goat (martes en la noche)",
+      "m": "Se reserva con semanas de anticipación",
+      "done": false,
+      "ord": 4
+    },
+    {
+      "id": "t5",
+      "t": "Reservar The Purple Pig (miércoles en la noche)",
+      "m": "No siempre aceptan grupos grandes",
+      "done": false,
+      "ord": 5
+    },
+    {
+      "id": "t6",
+      "t": "Reservar mesa en The Robey · Up Room (viernes)",
+      "m": "Azotea, última noche larga",
+      "done": false,
+      "ord": 6
+    },
+    {
+      "id": "t7",
+      "t": "Descargar la app Ventra para el metro (la \"L\")",
+      "m": "También sirve Apple Pay en los torniquetes",
+      "done": false,
+      "ord": 7
+    },
+    {
+      "id": "t8",
+      "t": "Poner el presupuesto real de la vaca en Ajustes",
+      "m": "Está en $9.000 como marcador, no es el número de ustedes",
+      "done": false,
+      "ord": 8
+    }
+  ],
+  "done": {},
+  "decisions": {}
+}
