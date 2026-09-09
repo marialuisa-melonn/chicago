@@ -121,7 +121,8 @@ a{color:var(--lake);text-decoration:none}
 .hero{position:relative;overflow:hidden;background:linear-gradient(178deg,var(--sky-1) 0%, var(--sky-2) 72%, var(--sky-3) 100%);color:var(--hero-ink);padding:20px 20px 0}
 .hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;position:relative;z-index:3}
 .eyebrow{font-family:var(--fm);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--sky-3);filter:brightness(1.5)}
-.hero h1{font-family:var(--fd);font-weight:800;font-size:clamp(46px,15vw,68px);line-height:.82;margin:6px 0 0;letter-spacing:-.01em;text-wrap:balance}
+.hero h1{font-family:var(--fd);font-weight:800;font-size:clamp(38px,12.5vw,62px);line-height:.84;margin:6px 0 0;letter-spacing:-.01em}
+.hero-top>div:first-child{min-width:0;flex:1}
 .hero h1 em{font-style:normal;color:var(--brass);display:block}
 .countdown{text-align:right;flex-shrink:0}
 .countdown .num{font-family:var(--fd);font-weight:800;font-size:44px;line-height:.85;color:var(--brass);display:block;font-variant-numeric:tabular-nums}
@@ -741,9 +742,15 @@ function setSyn(kind, extra){
 async function loadData(silent){
   if(!silent) setSyn('loading');
   try{
-    const r = await fetch(RAW + '?t=' + Date.now(), { cache:'no-store' });
-    if(!r.ok) throw new Error(r.status);
-    applyData(await r.json());
+    let j = null;
+    for(const u of [RAW + '?t=' + Date.now(), 'data.json?t=' + Date.now()]){
+      try{
+        const r = await fetch(u, { cache:'no-store' });
+        if(r.ok){ j = await r.json(); break; }
+      }catch(_){}
+    }
+    if(!j) throw new Error('sin datos');
+    applyData(j);
     setSyn('ok');
   }catch(e){
     setSyn(State.updatedAt ? 'ok' : 'offline');
@@ -888,7 +895,7 @@ function renderMeta(){
   const all = DAYS.flatMap(d=>d.events);
   $('#mSpots').textContent = all.length;
   $('#mOk').textContent = all.filter(e=>e.status==='ok').length;
-  $('#mFalta').textContent = all.filter(e=>e.status==='falta').length + Object.values(State.decisions||{}).filter(v=>!v).length + POLLS.filter(p=>!(p.id in (State.decisions||{}))).length;
+  $('#mFalta').textContent = all.filter(e=>e.status==='falta').length + POLLS.filter(p=>!(State.decisions||{})[p.id]).length;
 }
 function renderHoy(){
   const p = tripPos();
