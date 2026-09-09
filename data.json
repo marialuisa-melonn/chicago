@@ -1,8 +1,8 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-09T20:14:30.054319Z",
+  "updatedAt": "2026-09-09T20:43:48.173070Z",
   "cfg": {
-    "budget": 9000,
+    "budget": 12200,
     "rate": 4000,
     "showCop": false,
     "people": 9
@@ -62,7 +62,7 @@
       "id": "t8",
       "t": "Poner el presupuesto real de la vaca en Ajustes",
       "m": "Está en $9.000 como marcador, no es el número de ustedes",
-      "done": false,
+      "done": true,
       "ord": 8
     }
   ],
