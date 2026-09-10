@@ -355,6 +355,11 @@ body.is-admin .adminlink{color:var(--brass);border-color:var(--brass);opacity:1}
 .opt.mine{border-color:var(--lake);background:var(--lake-soft)}
 .opt.mine .ol::after{content:""}
 /* ---- toast ---- */
+.toktxt{width:100%;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:10px 11px;font-family:var(--fm);font-size:12px;line-height:1.5;resize:vertical;word-break:break-all}
+.admsg{border-radius:10px;padding:11px 12px;font-size:13px;line-height:1.5;margin-bottom:11px}
+.admsg.bad{background:var(--star-soft);color:var(--star);border:1px solid var(--star)}
+.admsg.good{background:var(--good-soft);color:var(--good);border:1px solid var(--good)}
+.admsg b{font-weight:800}
 .toast{position:fixed;left:50%;bottom:88px;transform:translate(-50%,16px);z-index:90;background:var(--text);color:var(--bg);font-size:13px;padding:10px 16px;border-radius:100px;box-shadow:var(--shadow-lift);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:88vw;text-align:center}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 </style>
@@ -1167,28 +1172,62 @@ function openAdmin(){
     return;
   }
   openSheet(`<h3>Modo administradora</h3>
-    <p class="note" style="margin-bottom:12px">Solo para María Luisa. Pega aquí tu token de GitHub: se guarda <b>únicamente en este celular</b> y nunca se manda a ningún otro lado.</p>
-    <label class="field"><span class="fl">Token</span><input id="adTok" type="password" placeholder="github_pat_…" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></label>
-    <button class="btn" style="width:100%" id="adOk">Entrar</button>
+    <p class="note" style="margin-bottom:12px">Solo para María Luisa. Pega aquí tu token de GitHub: se guarda <b>únicamente en este celular</b> y no se manda a ningún otro lado.</p>
+    <label class="field"><span class="fl">Token</span>
+    <textarea id="adTok" class="toktxt" rows="3" placeholder="github_pat_..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea></label>
+    <div id="adMsg" class="admsg" hidden></div>
+    <button class="btn" style="width:100%" id="adOk">Comprobar y entrar</button>
     <p class="note" style="margin-top:12px">Si no eres tú, cierra esta ventana: sin token la app funciona igual, solo que de lectura.</p>`);
   setTimeout(()=>$('#adTok').focus(), 120);
+
+  const msg = (kind, html) => {
+    const m = $('#adMsg'); m.hidden = false; m.className = 'admsg ' + kind; m.innerHTML = html;
+  };
+
   $('#adOk').onclick = async ()=>{
     const t = $('#adTok').value.trim();
-    if(!t) return;
-    const btn = $('#adOk'); btn.textContent = 'Comprobando…';
+    if(!t){ msg('bad','Pega el token en la casilla de arriba.'); return; }
+    const btn = $('#adOk'); btn.textContent = 'Comprobando…'; btn.disabled = true;
+    const fin = () => { btn.textContent = 'Comprobar y entrar'; btn.disabled = false; };
+
+    if(!/^(github_pat_|ghp_)/.test(t)){
+      msg('bad','Eso no parece un token. Los tokens de GitHub empiezan por <b>github_pat_</b>. Puede que hayas pegado otra cosa, o que se haya copiado incompleto.');
+      fin(); return;
+    }
+    State.token = t;
     try{
-      State.token = t;
+      // 1) ¿puede LEER data.json?
       const r = await fetch(API + '?ref=' + REPO.branch + '&t=' + Date.now(), { headers: ghHeaders(), cache:'no-store' });
-      if(!r.ok && r.status !== 404) throw new Error(r.status===401||r.status===403 ? 'El token no sirve o no tiene permiso sobre este repo.' : 'Error ' + r.status);
+      if(r.status === 401){ msg('bad','<b>Token inválido</b> (401). Suele ser que se copió incompleto o que ya lo revocaste. Genera uno nuevo y vuelve a intentar.'); State.token=''; fin(); return; }
+      if(r.status === 403){ msg('bad','<b>Sin permiso</b> (403). El token es válido pero no lo dejan usar este repo.'); State.token=''; fin(); return; }
+      if(r.status === 404){ msg('bad','<b>El token no ve el repo</b> (404). Casi siempre son dos cosas: en <i>Repository access</i> no quedó elegido <b>chicago</b>, o en <i>Permissions → Contents</i> quedó en <b>No access</b>.'); State.token=''; fin(); return; }
+      if(!r.ok){ msg('bad','GitHub respondió <b>' + r.status + '</b>. Intenta de nuevo en un minuto.'); State.token=''; fin(); return; }
+      const j = await r.json();
+
+      // 2) ¿puede ESCRIBIR? Reescribimos el MISMO contenido: valida el permiso sin cambiar nada.
+      const w = await fetch(API, { method:'PUT', headers: ghHeaders(), body: JSON.stringify({
+        message:'Comprobar permiso de escritura', branch: REPO.branch, sha: j.sha,
+        content: (j.content||'').replace(/\s/g,'') }) });
+      if(w.status === 403 || w.status === 404){
+        msg('bad','<b>Puede leer, pero no escribir.</b> En el token, <i>Permissions → Repository permissions → Contents</i> tiene que quedar en <b>Read and write</b>, no en <i>Read-only</i>. Edita el token en GitHub y vuelve a comprobar (no hace falta generar otro).');
+        State.token=''; fin(); return;
+      }
+      if(!w.ok){ msg('bad','No pudo guardar: GitHub respondió <b>' + w.status + '</b>.'); State.token=''; fin(); return; }
+
+      // ✔ funciona de verdad
       State.admin = true; safeSet('chi_gh', t);
       document.body.classList.add('is-admin');
-      closeSheet(); renderAll(); setSyn('ok'); toast('Listo. Ya puedes registrar gastos.');
+      msg('good','<b>Listo.</b> Puedes leer y escribir. Ya te aparece el botón de registrar gasto.');
+      applyData(j.content ? JSON.parse(new TextDecoder().decode(Uint8Array.from(atob((j.content||'').replace(/\s/g,'')), c=>c.charCodeAt(0)))) : {});
+      renderAll(); setSyn('ok');
+      setTimeout(()=>{ closeSheet(); go('bote'); }, 1400);
     }catch(e){
-      State.token = ''; btn.textContent = 'Entrar'; toast(e.message);
+      msg('bad','No se pudo conectar con GitHub: ' + (e.message||e) + '. Revisa que tengas internet.');
+      State.token=''; fin();
     }
   };
-  $('#adTok').addEventListener('keydown', e=>{ if(e.key==='Enter') $('#adOk').click(); });
 }
+
 
 /* ============================================================
    BURST
