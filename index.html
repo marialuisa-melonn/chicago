@@ -744,13 +744,22 @@ function setSyn(kind, extra){
   else if(kind==='offline'){ dot.classList.add('bad'); txt.textContent = 'Sin conexión · mostrando lo último'; }
 }
 
-async function loadData(silent){
+async function loadData(silent, fresh){
   if(!silent) setSyn('loading');
   try{
+    // raw.githubusercontent cachea 5 min e ignora el ?t=; para una lectura fresca
+    // (boton Actualizar, o la administradora) vamos primero por la API.
+    const ts = Date.now();
+    const urls = (fresh || State.admin)
+      ? [API + '?ref=' + REPO.branch + '&t=' + ts, RAW + '?t=' + ts, 'data.json?t=' + ts]
+      : [RAW + '?t=' + ts, 'data.json?t=' + ts];
     let j = null;
-    for(const u of [RAW + '?t=' + Date.now(), 'data.json?t=' + Date.now()]){
+    for(const u of urls){
       try{
-        const r = await fetch(u, { cache:'no-store' });
+        const isApi = u.indexOf('https://api.github.com') === 0;
+        const h = isApi ? { 'Accept':'application/vnd.github.raw+json' } : {};
+        if(isApi && State.token) h['Authorization'] = 'Bearer ' + State.token;
+        const r = await fetch(u, { cache:'no-store', headers:h });
         if(r.ok){ j = await r.json(); break; }
       }catch(_){}
     }
@@ -1270,10 +1279,22 @@ document.addEventListener('click', e=>{
 $('#addExpBtn').onclick = openExpense;
 $('#cfgBtn').onclick = openConfig;
 $('#adminBtn').onclick = openAdmin;
-$('#synRef').onclick = ()=>loadData();
+$('#synRef').onclick = ()=>loadData(false, true);
 $('#todoAdd').onclick = ()=>{ const v = $('#todoInput').value.trim(); if(!v) return; $('#todoInput').value=''; addTodoLocal(v); };
 $('#todoInput').addEventListener('keydown', e=>{ if(e.key==='Enter') $('#todoAdd').click(); });
 window.go = go; window.selectDay = selectDay;
+
+async function revisarTokenGuardado(){
+  try{
+    const r = await fetch(API + '?ref=' + REPO.branch + '&t=' + Date.now(), { headers: ghHeaders(), cache:'no-store' });
+    if(r.ok) return;                                // el token sigue bueno
+    if(r.status < 400 || r.status >= 500) return;   // problema de GitHub, no del token
+    State.token = ''; State.admin = false; safeDel('chi_gh');
+    document.body.classList.remove('is-admin');
+    renderAll(); setSyn('ok');
+    toast('Tu token ya no sirve. Entra otra vez en Modo administradora.');
+  }catch(e){ /* sin internet: la dejamos como está */ }
+}
 
 /* ============================================================
    ARRANQUE
@@ -1290,7 +1311,8 @@ function renderAll(){
   State.day = p.phase==='durante' ? p.idx : 0;
   selectDay(State.day);
   renderAll();
-  loadData();
+  loadData(false, State.admin);
+  if(State.admin) revisarTokenGuardado();
   setInterval(()=>{ if(!State.dirty && document.visibilityState==='visible') loadData(true); }, 60000);
   document.addEventListener('visibilitychange', ()=>{ if(document.visibilityState==='visible' && !State.dirty) loadData(true); });
 })();
