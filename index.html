@@ -338,9 +338,9 @@ a{color:var(--lake);text-decoration:none}
 .dot.warn{background:var(--brass)}
 .dot.bad{background:var(--star)}
 /* ---- solo administradora ---- */
-.adminonly{display:none}
-body.is-admin .adminonly{display:block}
-body.is-admin .adminonly[style*="flex"]{display:flex}
+.adminonly{display:none!important}
+body.is-admin .adminonly{display:block!important}
+body.is-admin .adminonly[style*="flex"]{display:flex!important}
 .adminlink{font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-soft);border-radius:100px;padding:7px 14px;opacity:.75}
 body.is-admin .adminlink{color:var(--brass);border-color:var(--brass);opacity:1}
 /* ---- estados de solo lectura ---- */
