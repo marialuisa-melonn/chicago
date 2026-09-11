@@ -502,7 +502,7 @@ const TRIP = { start:'2026-09-13', end:'2026-09-19', people:9 };
 
 const MAPQ = q => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q + ' Chicago');
 
-const DAYS = [
+const DAYS_SEED = [
 {
   n:1, date:'2026-09-13', dow:'Domingo', dm:'13 sep',
   hood:'River North', title:'El río, la milla y el barco',
@@ -598,6 +598,7 @@ const DAYS = [
      sub:['Oak Street','Magnificent Mile','360 Chicago','TILT (el mirador inclinado)']}
   ]
 }];
+let DAYS = DAYS_SEED;   // se reemplaza con lo que venga de data.json
 
 const POLLS = [
   { id:'p-lunes', title:'¿Dónde desayunamos el lunes?', q:'Es la única casilla vacía del itinerario. Estos quedan cerca de Millennium Park.',
@@ -714,7 +715,7 @@ function b64(str){
   return btoa(bin);
 }
 function payload(){
-  return { v:1, updatedAt:new Date().toISOString(), cfg:State.cfg,
+  return { v:1, updatedAt:new Date().toISOString(), cfg:State.cfg, days:DAYS,
            expenses:State.expenses, todos:State.todos, done:State.done, decisions:State.decisions };
 }
 function applyData(j){
@@ -724,6 +725,7 @@ function applyData(j){
   State.todos     = Array.isArray(j.todos)     ? j.todos     : [];
   State.done      = (j.done && typeof j.done==='object')           ? j.done      : {};
   State.decisions = (j.decisions && typeof j.decisions==='object') ? j.decisions : {};
+  DAYS = (Array.isArray(j.days) && j.days.length) ? j.days : DAYS_SEED;
   State.updatedAt = j.updatedAt || null;
 }
 
@@ -937,7 +939,7 @@ function renderHoy(){
       <span class="ltag">${esc(d.walk)}</span>
       <span class="ltag">${WEATHER[wi].hi}° / ${WEATHER[wi].lo}°</span>
     </div>
-    ${renderTimeline(d)}
+    ${renderTimeline(d, DAYS.indexOf(d))}
     <button class="btn ghost" style="width:100%" onclick="go('plan');selectDay(${DAYS.indexOf(d)})">Ver los siete días →</button>
 
     <div class="sec-head"><h2>Sin cerrar</h2><span class="hint">${pend.length + openTodos.length} sueltos</span></div>
@@ -979,8 +981,9 @@ function statusPill(e){
   }
   return `<span class="pill plan">Libre</span>`;
 }
-function renderTimeline(d){
-  return '<div class="tl">' + d.events.map((e,i)=>{
+function renderTimeline(d, di){
+  const orden = [...d.events].sort((a,b)=>(a.time||'').localeCompare(b.time||''));
+  return '<div class="tl">' + orden.map((e,i)=>{
     const done = !!State.done[e.id];
     return `
     <div class="ev s-${e.status} ${done?'done':''}" style="animation-delay:${i*55}ms">
@@ -997,13 +1000,15 @@ function renderTimeline(d){
           ${e.map?`<a class="linkbtn" href="${MAPQ(e.map)}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Mapa</a>`:''}
           ${e.url?`<a class="linkbtn" href="${e.url}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6M10 14L21 3"/></svg>Sitio</a>`:''}
           ${e.poll?`<button class="linkbtn" onclick="go('extras');setTimeout(()=>document.getElementById('${e.poll}')?.scrollIntoView({behavior:'smooth',block:'center'}),320)"><svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>Ver opciones</button>`:''}
+          ${State.admin ? `<button class="linkbtn" data-edit="${di}|${e.id}"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>Editar</button>` : ''}
           ${State.admin
             ? `<button class="chk" data-done="${e.id}" aria-pressed="${done}"><b></b>${done?'Hecho':'Marcar'}</button>`
             : (done ? `<span class="chk ro"><b></b>Hecho</span>` : '')}
         </div>
       </div>
     </div>`;
-  }).join('') + '</div>';
+  }).join('') + '</div>'
+    + (State.admin ? `<button class="btn ghost" style="width:100%;margin:-2px 0 10px" data-add="${di}">+ Agregar un plan a este día</button>` : '');
 }
 function buildRail(){
   $('#dayrail').innerHTML = DAYS.map((d,i)=>{
@@ -1029,7 +1034,7 @@ function renderDay(){
       <span class="ltag">${WEATHER[State.day].hi}° / ${WEATHER[State.day].lo}° · ${esc(WEATHER[State.day].c)}</span>
       ${done?`<span class="ltag" style="color:var(--brass)">${done}/${d.events.length} hecho</span>`:''}
     </div>
-    ${renderTimeline(d)}`;
+    ${renderTimeline(d, State.day)}`;
   $('#planFoot').innerHTML = State.admin
     ? 'Toca el cuadrito para tachar lo que ya hicieron.<br>Se guarda y todas lo ven.'
     : 'María Luisa va tachando lo que ya hicieron.<br>Refresca para ver lo último.';
@@ -1136,6 +1141,79 @@ function renderTodos(){
         ${State.admin?`<button class="del" data-todel="${t.id}" aria-label="Borrar">✕</button>`:''}
       </div>`).join('');
 }
+
+
+/* ============================================================
+   EDITOR DEL ITINERARIO (solo administradora)
+   ============================================================ */
+const ESTADOS = [
+  {k:'ok',    l:'Confirmado · con reserva'},
+  {k:'falta', l:'Falta reservar'},
+  {k:'plan',  l:'Plan libre · sin reserva'},
+  {k:'voto',  l:'Por decidir'}
+];
+const FRANJAS = ['Brunch','Almuerzo','Cena','Tarde','Tarde libre','Noche','Museo','Mirador','Tour','Acuario','Antojo','Vitrinas','Compras','Plan'];
+
+function openEditEvent(di, id){
+  const d = DAYS[di];
+  if(!d) return;
+  const nuevo = !id;
+  const e = nuevo
+    ? { id:'x'+uid(), time:'12:00', slot:'Plan', title:'', where:'', status:'plan', map:'', url:'', tag:'' }
+    : d.events.find(x=>x.id===id);
+  if(!e) return;
+
+  openSheet(`<h3>${nuevo ? 'Agregar un plan' : 'Editar plan'}</h3>
+    <p class="note" style="margin-bottom:13px">${esc(d.dow)} ${esc(d.dm)} · ${esc(d.hood)}</p>
+    <div class="row2">
+      <label class="field"><span class="fl">Hora</span><input id="evTime" type="time" value="${esc(e.time||'12:00')}"></label>
+      <label class="field"><span class="fl">Franja</span><input id="evSlot" list="franjas" value="${esc(e.slot||'')}" placeholder="Cena">
+      <datalist id="franjas">${FRANJAS.map(f=>`<option value="${f}">`).join('')}</datalist></label>
+    </div>
+    <label class="field"><span class="fl">Nombre del plan</span><input id="evTitle" value="${esc(e.title||'')}" placeholder="The Purple Pig"></label>
+    <label class="field"><span class="fl">Nota · lo que ven todas</span><textarea id="evWhere" class="shtxt" style="min-height:78px;font-family:var(--fb);font-size:14px">${esc(e.where||'')}</textarea></label>
+    <label class="field"><span class="fl">Estado</span><select id="evStatus">${ESTADOS.map(x=>`<option value="${x.k}" ${e.status===x.k?'selected':''}>${x.l}</option>`).join('')}</select></label>
+    <div class="row2">
+      <label class="field"><span class="fl">Emoji</span><input id="evTag" value="${esc(e.tag||'')}" placeholder="🍷" maxlength="4"></label>
+      <label class="field"><span class="fl">Buscar en mapas</span><input id="evMap" value="${esc(e.map||'')}" placeholder="The Purple Pig"></label>
+    </div>
+    <label class="field"><span class="fl">Sitio web · opcional</span><input id="evUrl" type="url" inputmode="url" value="${esc(e.url||'')}" placeholder="https://…"></label>
+    <button class="btn" style="width:100%" id="evOk">${nuevo ? 'Agregar al día' : 'Guardar cambios'}</button>
+    ${nuevo ? '' : '<button class="btn ghost" style="width:100%;margin-top:8px;color:var(--star);border-color:var(--star)" id="evDel">Borrar este plan</button>'}
+    <p class="note" style="text-align:center;margin-top:11px">Los planes se ordenan solos por hora.</p>`);
+
+  setTimeout(()=>$('#evTitle').focus(), 120);
+
+  $('#evOk').onclick = ()=>{
+    const titulo = $('#evTitle').value.trim();
+    if(!titulo){ $('#evTitle').focus(); toast('Ponle un nombre al plan'); return; }
+    const campos = {
+      time:   $('#evTime').value || '12:00',
+      slot:   $('#evSlot').value.trim() || 'Plan',
+      title:  titulo,
+      where:  $('#evWhere').value.trim(),
+      status: $('#evStatus').value,
+      tag:    $('#evTag').value.trim(),
+      map:    $('#evMap').value.trim(),
+      url:    $('#evUrl').value.trim()
+    };
+    if(nuevo){ d.events.push({ ...e, ...campos }); }
+    else { Object.assign(e, campos); }
+    renderAll();
+    queueSave((nuevo?'Agregar ':'Editar ') + titulo);
+    closeSheet();
+    if(nuevo) burstAt(window.innerWidth/2, window.innerHeight*0.35);
+  };
+
+  const bd = $('#evDel');
+  if(bd) bd.onclick = ()=>{
+    if(!confirm('¿Borrar "' + (e.title||'este plan') + '" del ' + d.dow.toLowerCase() + '?')) return;
+    d.events = d.events.filter(x=>x.id!==e.id);
+    delete State.done[e.id];
+    renderAll(); queueSave('Borrar ' + (e.title||'plan')); closeSheet();
+  };
+}
+window.openEditEvent = openEditEvent;
 
 /* ============================================================
    SHEETS
@@ -1273,6 +1351,10 @@ document.addEventListener('click', e=>{
   if(chk){ const id = chk.dataset.done, now = !State.done[id];
     if(now){ const r = chk.getBoundingClientRect(); burstAt(r.left+r.width/2, r.top+r.height/2); }
     setDone(id, now); return; }
+  const ed = e.target.closest('[data-edit]');
+  if(ed){ const [di,id] = ed.dataset.edit.split('|'); openEditEvent(+di, id); return; }
+  const ad = e.target.closest('[data-add]');
+  if(ad){ openEditEvent(+ad.dataset.add, null); return; }
   const dec = e.target.closest('[data-dec]');
   if(dec){ const [p,o] = dec.dataset.dec.split('|'); setDecision(p,o); return; }
   const td = e.target.closest('[data-todo]');
