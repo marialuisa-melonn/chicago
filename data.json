@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-11T20:54:07.350725Z",
+  "updatedAt": "2026-09-11T21:45:45.285Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -8,6 +8,14 @@
     "people": 9
   },
   "expenses": [
+    {
+      "id": "mtxhjgwpbngu",
+      "what": "Reserva Purple Pig",
+      "amt": 70,
+      "cat": "comida",
+      "who": "María Luisa",
+      "at": 1789163143513
+    },
     {
       "id": "mtxf84l4av6k",
       "what": "CityPass",
