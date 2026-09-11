@@ -1,13 +1,22 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-11T20:28:51.291504Z",
+  "updatedAt": "2026-09-11T20:40:56.770Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
     "showCop": false,
     "people": 9
   },
-  "expenses": [],
+  "expenses": [
+    {
+      "id": "mtxf84l4av6k",
+      "what": "CityPass",
+      "amt": 1022,
+      "cat": "tours",
+      "who": "—",
+      "at": 1789159255097
+    }
+  ],
   "todos": [
     {
       "id": "t1",
