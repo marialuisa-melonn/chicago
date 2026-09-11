@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-11T21:45:45.285Z",
+  "updatedAt": "2026-09-11T22:00:16.731782Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -57,8 +57,8 @@
     {
       "id": "t5",
       "t": "Reservar The Purple Pig (miércoles en la noche)",
-      "m": "No siempre aceptan grupos grandes",
-      "done": false,
+      "m": "Listo: miércoles 8:45 pm",
+      "done": true,
       "ord": 5
     },
     {
