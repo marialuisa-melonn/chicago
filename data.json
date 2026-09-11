@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-11T22:00:16.731782Z",
+  "updatedAt": "2026-09-11T22:02:02.740554Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -105,5 +105,464 @@
     }
   ],
   "done": {},
-  "decisions": {}
+  "decisions": {},
+  "days": [
+    {
+      "n": 1,
+      "date": "2026-09-13",
+      "dow": "Domingo",
+      "dm": "13 sep",
+      "hood": "River North",
+      "title": "El río, la milla y el barco",
+      "el": {
+        "name": "Brown / Purple · Merchandise Mart",
+        "color": "#5D3A1A"
+      },
+      "walk": "≈ 5 km caminando",
+      "events": [
+        {
+          "id": "d1a",
+          "time": "11:00",
+          "slot": "Brunch",
+          "title": "Beatrix",
+          "where": "River North · reserva confirmada para 7",
+          "status": "ok",
+          "map": "Beatrix River North",
+          "tag": "🍳"
+        },
+        {
+          "id": "d1b",
+          "time": "13:00",
+          "slot": "Tarde libre",
+          "title": "Riverwalk y Magnificent Mile",
+          "where": "Caminar sin afán por la orilla del río y subir por Michigan Avenue. Vuelvan al Riverwalk antes de las 4: de ahí sale el barco.",
+          "status": "plan",
+          "map": "Chicago Riverwalk",
+          "tag": "🚶‍♀️",
+          "sub": [
+            "Chicago Riverwalk",
+            "Magnificent Mile",
+            "Puentes levadizos",
+            "Marina City"
+          ]
+        },
+        {
+          "id": "d1tour",
+          "time": "16:00",
+          "slot": "Tour",
+          "title": "Architecture Boat Tour",
+          "where": "Confirmado. Lleguen 20 minutos antes al muelle y siéntense del lado izquierdo al salir: por ahí queda el mejor lado del río.",
+          "status": "ok",
+          "url": "https://www.viator.com/es-ES/tours/Chicago/Chicago-River-Architecture-Tour/d673-76126P1",
+          "map": "Chicago Architecture River Cruise",
+          "tag": "⛴️"
+        },
+        {
+          "id": "d1c",
+          "time": "19:00",
+          "slot": "Noche",
+          "title": "Gilt Bar",
+          "where": "Falta reservar. Es pequeño y se llena — vale la pena llamar antes.",
+          "status": "falta",
+          "url": "https://www.giltbarchicago.com/",
+          "map": "Gilt Bar",
+          "tag": "🍸"
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "date": "2026-09-14",
+      "dow": "Lunes",
+      "dm": "14 sep",
+      "hood": "The Loop · Museum Campus",
+      "title": "Parque, museo y acuario",
+      "el": {
+        "name": "Loop: todas las líneas · Shedd: a pie por la orilla",
+        "color": "#0F6E93"
+      },
+      "walk": "≈ 7 km caminando",
+      "events": [
+        {
+          "id": "d2a",
+          "time": "11:00",
+          "slot": "Brunch",
+          "title": "Por definir",
+          "where": "La única casilla vacía del itinerario. Hay una votación abierta en Extras.",
+          "status": "voto",
+          "poll": "p-lunes",
+          "tag": "❓"
+        },
+        {
+          "id": "d2b",
+          "time": "12:30",
+          "slot": "Tarde",
+          "title": "Millennium Park",
+          "where": "Media hora larga y suficiente: es al aire libre y el Bean queda a dos pasos del museo.",
+          "status": "plan",
+          "map": "Millennium Park",
+          "tag": "🫘",
+          "sub": [
+            "Cloud Gate (the Bean)",
+            "Crown Fountain",
+            "Lurie Garden",
+            "BP Bridge"
+          ]
+        },
+        {
+          "id": "d2art",
+          "time": "13:15",
+          "slot": "Museo",
+          "title": "Art Institute",
+          "where": "Cruzando la calle desde Millennium Park, así que no hay que devolverse. Con dos horas alcanza yendo directo a lo bueno.",
+          "status": "plan",
+          "url": "https://www.artic.edu/",
+          "map": "Art Institute of Chicago",
+          "tag": "🖼️",
+          "sub": [
+            "American Gothic",
+            "Nighthawks",
+            "Los impresionistas · 2º piso",
+            "Las miniaturas Thorne"
+          ]
+        },
+        {
+          "id": "d2shedd",
+          "time": "15:30",
+          "slot": "Acuario",
+          "title": "Shedd Aquarium",
+          "where": "A 20 minutos a pie desde el museo bordeando el lago. Saquen la entrada con hora para las 3:30 y confirmen hasta qué hora dejan entrar, que es lo justo del día.",
+          "status": "plan",
+          "url": "https://www.sheddaquarium.org/",
+          "map": "Shedd Aquarium",
+          "tag": "🐠",
+          "sub": [
+            "Entrada con hora · 3:30 pm",
+            "La foto del skyline es desde la explanada",
+            "Las belugas y el arrecife"
+          ]
+        },
+        {
+          "id": "d2d",
+          "time": "20:00",
+          "slot": "Noche",
+          "title": "Cindy's Rooftop",
+          "where": "Terraza sobre Millennium Park. La vista es el plan.",
+          "status": "plan",
+          "url": "https://cindysrooftop.com/",
+          "map": "Cindy's Rooftop",
+          "tag": "🌆"
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "date": "2026-09-15",
+      "dow": "Martes",
+      "dm": "15 sep",
+      "hood": "West Loop · Fulton Market",
+      "title": "Las alturas y la hamburguesa",
+      "el": {
+        "name": "Green / Pink · Morgan",
+        "color": "#009B3A"
+      },
+      "walk": "≈ 6 km caminando",
+      "events": [
+        {
+          "id": "d3sky",
+          "time": "10:30",
+          "slot": "Mirador",
+          "title": "Skydeck · Willis Tower",
+          "where": "Sin madrugar y antes de la hamburguesa. Está a 15 minutos a pie de Au Cheval, así que queda de camino al West Loop. Compren la entrada en línea: la fila de taquilla es la que mata.",
+          "status": "plan",
+          "url": "https://theskydeck.com/",
+          "map": "Skydeck Chicago Willis Tower",
+          "tag": "🏙️",
+          "sub": [
+            "The Ledge · los balcones de vidrio",
+            "Entrada en línea con hora",
+            "Piso 103"
+          ]
+        },
+        {
+          "id": "d3a",
+          "time": "12:30",
+          "slot": "Almuerzo",
+          "title": "Au Cheval o Small Cheval",
+          "where": "Au Cheval tiene la mejor hamburguesa de la ciudad y una fila eterna. Small Cheval es la versión rápida.",
+          "status": "voto",
+          "poll": "p-cheval",
+          "url": "https://www.auchevalchicago.com/",
+          "map": "Au Cheval",
+          "tag": "🍔"
+        },
+        {
+          "id": "d3b",
+          "time": "14:00",
+          "slot": "Tarde",
+          "title": "Fulton Market y Randolph Street",
+          "where": "Tiendas, galerías y murales. Es el barrio más fotografiable del viaje.",
+          "status": "plan",
+          "map": "Fulton Market District",
+          "tag": "🖼️",
+          "sub": [
+            "Randolph Restaurant Row",
+            "Galerías de West Loop",
+            "Murales de Fulton Market"
+          ]
+        },
+        {
+          "id": "d3c",
+          "time": "19:00",
+          "slot": "Antojo",
+          "title": "Jeni's Ice Cream",
+          "where": "Helado antes de la cena. Sí, en ese orden.",
+          "status": "plan",
+          "map": "Jeni's Splendid Ice Creams Wicker Park",
+          "tag": "🍦"
+        },
+        {
+          "id": "d3d",
+          "time": "20:00",
+          "slot": "Cena",
+          "title": "Girl & the Goat",
+          "where": "Y después el bar izakaya de Momotaro, a cinco minutos.",
+          "status": "falta",
+          "url": "https://www.girlandthegoat.com/",
+          "map": "Girl and the Goat",
+          "tag": "🐐",
+          "sub": [
+            "Girl & the Goat",
+            "Momotaro · Bar Izakaya"
+          ]
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "date": "2026-09-16",
+      "dow": "Miércoles",
+      "dm": "16 sep",
+      "hood": "Streeterville · el lago",
+      "title": "Todo el día junto al agua",
+      "el": {
+        "name": "Sin L · bus 29 o 65 a Navy Pier",
+        "color": "#8A6D3B"
+      },
+      "walk": "≈ 8 km caminando",
+      "events": [
+        {
+          "id": "d4a",
+          "time": "13:00",
+          "slot": "Almuerzo",
+          "title": "Alla Vita",
+          "where": "Reserva confirmada para 7 — ojo, es a la 1:00 pm, no a las 11.",
+          "status": "ok",
+          "map": "Alla Vita",
+          "tag": "🍝"
+        },
+        {
+          "id": "d4b",
+          "time": "14:30",
+          "slot": "Tarde",
+          "title": "Lago Michigan y Navy Pier",
+          "where": "El día de más caminata del viaje. Lleven tenis y una chaqueta: junto al lago sopla.",
+          "status": "plan",
+          "map": "Navy Pier",
+          "tag": "🎡",
+          "sub": [
+            "Navy Pier",
+            "Lakefront Trail",
+            "Milton Lee Olive Park",
+            "Ohio Street Beach"
+          ]
+        },
+        {
+          "id": "d4c",
+          "time": "19:00",
+          "slot": "Por decidir",
+          "title": "¿Paseo en barco o Riverwalk?",
+          "where": "Quedó con signo de pregunta en el itinerario. Voten en Extras.",
+          "status": "voto",
+          "poll": "p-barco",
+          "tag": "⛵"
+        },
+        {
+          "id": "d4d",
+          "time": "20:45",
+          "slot": "Cena",
+          "title": "The Purple Pig",
+          "where": "Reservado. Sobre Michigan Ave, tapas mediterráneas y todo para compartir.",
+          "status": "ok",
+          "map": "The Purple Pig",
+          "tag": "🐷"
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "date": "2026-09-17",
+      "dow": "Jueves",
+      "dm": "17 sep",
+      "hood": "Lincoln Park",
+      "title": "Verde, animales y vitrinas",
+      "el": {
+        "name": "Brown / Purple · Armitage",
+        "color": "#5D3A1A"
+      },
+      "walk": "≈ 6 km caminando",
+      "events": [
+        {
+          "id": "d5a",
+          "time": "11:00",
+          "slot": "Brunch",
+          "title": "Summer House Santa Monica",
+          "where": "Reserva confirmada para 7. El sitio está diseñado para que parezca que están en California.",
+          "status": "ok",
+          "map": "Summer House Santa Monica",
+          "tag": "☀️"
+        },
+        {
+          "id": "d5b",
+          "time": "13:00",
+          "slot": "Tarde",
+          "title": "Lincoln Park, Conservatory y Zoo",
+          "where": "El zoológico es gratis y el invernadero también. De los dos, el invernadero es el que sorprende.",
+          "status": "plan",
+          "map": "Lincoln Park Zoo",
+          "tag": "🌿",
+          "sub": [
+            "Lincoln Park",
+            "Lincoln Park Conservatory",
+            "Lincoln Park Zoo",
+            "Alfred Caldwell Lily Pool"
+          ]
+        },
+        {
+          "id": "d5c",
+          "time": "19:00",
+          "slot": "Vitrinas",
+          "title": "Librerías y decoración",
+          "where": "Caminar Armitage y Halsted, entrar a lo que se les antoje.",
+          "status": "plan",
+          "map": "Armitage Avenue Lincoln Park",
+          "tag": "📚"
+        },
+        {
+          "id": "d5d",
+          "time": "20:00",
+          "slot": "Cena",
+          "title": "Roberts Pizza o Café Ba-Ba-Reeba",
+          "where": "Pizza de Chicago contra tapas españolas. Hay votación en Extras.",
+          "status": "voto",
+          "poll": "p-jueves",
+          "url": "https://www.cafebabareeba.com/",
+          "map": "Cafe Ba-Ba-Reeba",
+          "tag": "🍕"
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "date": "2026-09-18",
+      "dow": "Viernes",
+      "dm": "18 sep",
+      "hood": "Wicker Park · Bucktown",
+      "title": "Vintage y azoteas",
+      "el": {
+        "name": "Blue Line · Damen",
+        "color": "#00A1DE"
+      },
+      "walk": "≈ 5 km caminando",
+      "events": [
+        {
+          "id": "d6a",
+          "time": "11:00",
+          "slot": "Brunch",
+          "title": "The Allis · Soho House",
+          "where": "Reserva confirmada para 7, con el atrio incluido. Es el brunch más bonito de la semana.",
+          "status": "ok",
+          "map": "The Allis Soho House Chicago",
+          "tag": "🛋️"
+        },
+        {
+          "id": "d6b",
+          "time": "13:00",
+          "slot": "Tarde",
+          "title": "Wicker Park, Bucktown y Milwaukee Ave",
+          "where": "El eje del vintage. Milwaukee Avenue es la calle a recorrer completa.",
+          "status": "plan",
+          "map": "Wicker Park Chicago",
+          "tag": "🧥",
+          "sub": [
+            "Milwaukee Avenue",
+            "Damen Avenue",
+            "Tiendas vintage",
+            "The Flat Iron Arts Building"
+          ]
+        },
+        {
+          "id": "d6c",
+          "time": "19:00",
+          "slot": "Comida rápida",
+          "title": "CAVA",
+          "where": "Algo liviano antes de la azotea.",
+          "status": "plan",
+          "map": "CAVA Wicker Park",
+          "tag": "🥙"
+        },
+        {
+          "id": "d6d",
+          "time": "20:00",
+          "slot": "Noche",
+          "title": "The Robey · Up Room",
+          "where": "La azotea con la mejor vista del lado oeste. Última noche larga.",
+          "status": "falta",
+          "map": "The Robey Hotel Wicker Park",
+          "tag": "🌃"
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "date": "2026-09-19",
+      "dow": "Sábado",
+      "dm": "19 sep",
+      "hood": "Gold Coast",
+      "title": "Compras y el último mirador",
+      "el": {
+        "name": "Red Line · Clark/Division",
+        "color": "#C60C30"
+      },
+      "walk": "≈ 4 km caminando",
+      "events": [
+        {
+          "id": "d7a",
+          "time": "11:00",
+          "slot": "Brunch",
+          "title": "3 Arts Club Café",
+          "where": "Dentro de RH Chicago, bajo la claraboya. Reserva confirmada para 7.",
+          "status": "ok",
+          "map": "3 Arts Club Cafe RH Chicago",
+          "tag": "🕯️"
+        },
+        {
+          "id": "d7b",
+          "time": "13:00",
+          "slot": "Tarde",
+          "title": "Compras y 360 Chicago",
+          "where": "Último día: lo que falte comprar y el mirador para despedirse de la ciudad desde arriba.",
+          "status": "plan",
+          "map": "360 Chicago Observation Deck",
+          "tag": "🛍️",
+          "sub": [
+            "Oak Street",
+            "Magnificent Mile",
+            "360 Chicago",
+            "TILT (el mirador inclinado)"
+          ]
+        }
+      ]
+    }
+  ]
 }
