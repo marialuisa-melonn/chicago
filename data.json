@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-11T20:40:56.770Z",
+  "updatedAt": "2026-09-11T20:53:14.211271Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -13,7 +13,7 @@
       "what": "CityPass",
       "amt": 1022,
       "cat": "tours",
-      "who": "—",
+      "who": "María Luisa",
       "at": 1789159255097
     }
   ],
