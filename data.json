@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-09T20:43:48.173070Z",
+  "updatedAt": "2026-09-11T20:28:51.291504Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -19,8 +19,8 @@
     {
       "id": "t2",
       "t": "Comprar el City Pass o los tickets del Architecture Boat Tour",
-      "m": "Día 2 · se agota, comprar antes de viajar",
-      "done": false,
+      "m": "Listo: confirmado para el domingo a las 4:00 pm",
+      "done": true,
       "ord": 2
     },
     {
@@ -64,6 +64,27 @@
       "m": "Está en $9.000 como marcador, no es el número de ustedes",
       "done": true,
       "ord": 8
+    },
+    {
+      "id": "t10",
+      "t": "Comprar en línea la entrada del Shedd Aquarium (lunes)",
+      "m": "Con hora reservada; la fila de taquilla es larga",
+      "done": false,
+      "ord": 9
+    },
+    {
+      "id": "t11",
+      "t": "Comprar en línea la entrada del Skydeck (martes 10:30)",
+      "m": "Igual: la fila de taquilla es la que quita tiempo",
+      "done": false,
+      "ord": 10
+    },
+    {
+      "id": "t12",
+      "t": "Decidir a qué día se mueve el Art Institute",
+      "m": "No cabe el lunes con el Shedd: los dos cierran a las 5",
+      "done": false,
+      "ord": 11
     }
   ],
   "done": {},
