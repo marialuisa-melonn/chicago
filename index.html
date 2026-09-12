@@ -488,7 +488,7 @@ body.is-admin .adminlink{color:var(--brass);border-color:var(--brass);opacity:1}
     <div style="text-align:center;padding:24px 0 4px">
       <button class="adminlink" id="adminBtn">Modo administradora</button>
     </div>
-    <div class="foot">Hecho para las nueve.<br>Buen viaje.</div>
+    <div class="foot">Hecho para las siete.<br>Buen viaje.</div>
   </section>
 
   <nav class="tabbar" role="tablist" aria-label="Secciones"><div class="tabbar-in" id="tabbar"></div></nav>
@@ -498,7 +498,7 @@ body.is-admin .adminlink{color:var(--brass);border-color:var(--brass);opacity:1}
 <div class="toast" id="toast"></div>
 
 <script>
-const TRIP = { start:'2026-09-13', end:'2026-09-19', people:9 };
+const TRIP = { start:'2026-09-13', end:'2026-09-19', people:7 };
 
 const MAPQ = q => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q + ' Chicago');
 
@@ -690,7 +690,7 @@ const API = `https://api.github.com/repos/${REPO.owner}/${REPO.name}/contents/${
 
 const State = {
   admin:false, token:'', dirty:false, updatedAt:null, sha:null,
-  cfg:{ budget:9000, rate:4000, showCop:false, people:9 },
+  cfg:{ budget:12200, rate:4000, showCop:false, people:7 },
   expenses:[], todos:[], done:{}, decisions:{},
   day:0
 };
@@ -1054,7 +1054,7 @@ function renderBote(){
   $('#ringAmt').style.color = left < 0 ? 'var(--star)' : '';
   $('#ringAlt').textContent = 'de ' + money(b) + (State.cfg.showCop ? ' · ' + cop(b) : '');
   $('#fSpent').textContent = money(spent);
-  $('#fPer').textContent = money(spent / (State.cfg.people||9));
+  $('#fPer').textContent = money(spent / (State.cfg.people||7));
   $('#fBudget').textContent = money(b);
   $('#expCount').textContent = State.expenses.length + (State.expenses.length===1?' gasto':' gastos');
 
@@ -1243,7 +1243,7 @@ function openConfig(){
   openSheet(`<h3>Ajustes de la vaca</h3>
     <label class="field"><span class="fl">Presupuesto total del grupo (USD)</span><input id="cfB" type="number" step="1" value="${State.cfg.budget}"></label>
     <div class="row2">
-      <label class="field"><span class="fl">¿Cuántas van?</span><input id="cfP" type="number" step="1" min="1" value="${State.cfg.people||9}"></label>
+      <label class="field"><span class="fl">¿Cuántas van?</span><input id="cfP" type="number" step="1" min="1" value="${State.cfg.people||7}"></label>
       <label class="field"><span class="fl">Dólar (COP)</span><input id="cfR" type="number" step="1" value="${State.cfg.rate}"></label>
     </div>
     <label style="display:flex;align-items:center;gap:10px;padding:11px 12px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;margin-bottom:12px;cursor:pointer">
