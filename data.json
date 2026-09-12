@@ -1,11 +1,11 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-11T22:02:02.740554Z",
+  "updatedAt": "2026-09-12T01:09:47.354427Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
     "showCop": false,
-    "people": 9
+    "people": 7
   },
   "expenses": [
     {
@@ -42,9 +42,9 @@
     },
     {
       "id": "t3",
-      "t": "Confirmar si las reservas van para 7 personas o para las 9",
-      "m": "Las 5 reservas confirmadas están hechas para 7",
-      "done": false,
+      "t": "Son 7 en total: las reservas están bien",
+      "m": "Confirmado — los cinco brunches quedaron correctos",
+      "done": true,
       "ord": 3
     },
     {
