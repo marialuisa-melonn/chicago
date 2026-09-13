@@ -1,111 +1,12 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-12T01:09:47.354427Z",
+  "updatedAt": "2026-09-13T03:22:59.138Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
     "showCop": false,
     "people": 7
   },
-  "expenses": [
-    {
-      "id": "mtxhjgwpbngu",
-      "what": "Reserva Purple Pig",
-      "amt": 70,
-      "cat": "comida",
-      "who": "María Luisa",
-      "at": 1789163143513
-    },
-    {
-      "id": "mtxf84l4av6k",
-      "what": "CityPass",
-      "amt": 1022,
-      "cat": "tours",
-      "who": "María Luisa",
-      "at": 1789159255097
-    }
-  ],
-  "todos": [
-    {
-      "id": "t1",
-      "t": "Reservar Gilt Bar para el domingo 7:00 pm",
-      "m": "Día 1 · estaba marcado en rojo en la hoja",
-      "done": false,
-      "ord": 1
-    },
-    {
-      "id": "t2",
-      "t": "Comprar el City Pass o los tickets del Architecture Boat Tour",
-      "m": "Listo: confirmado para el domingo a las 4:00 pm",
-      "done": true,
-      "ord": 2
-    },
-    {
-      "id": "t3",
-      "t": "Son 7 en total: las reservas están bien",
-      "m": "Confirmado — los cinco brunches quedaron correctos",
-      "done": true,
-      "ord": 3
-    },
-    {
-      "id": "t4",
-      "t": "Reservar Girl & the Goat (martes en la noche)",
-      "m": "Se reserva con semanas de anticipación",
-      "done": false,
-      "ord": 4
-    },
-    {
-      "id": "t5",
-      "t": "Reservar The Purple Pig (miércoles en la noche)",
-      "m": "Listo: miércoles 8:45 pm",
-      "done": true,
-      "ord": 5
-    },
-    {
-      "id": "t6",
-      "t": "Reservar mesa en The Robey · Up Room (viernes)",
-      "m": "Azotea, última noche larga",
-      "done": false,
-      "ord": 6
-    },
-    {
-      "id": "t7",
-      "t": "Descargar la app Ventra para el metro (la \"L\")",
-      "m": "También sirve Apple Pay en los torniquetes",
-      "done": false,
-      "ord": 7
-    },
-    {
-      "id": "t8",
-      "t": "Poner el presupuesto real de la vaca en Ajustes",
-      "m": "Está en $9.000 como marcador, no es el número de ustedes",
-      "done": true,
-      "ord": 8
-    },
-    {
-      "id": "t10",
-      "t": "Comprar en línea la entrada del Shedd Aquarium (lunes)",
-      "m": "Con hora para las 3:30 pm, y confirmar hasta qué hora dejan entrar",
-      "done": false,
-      "ord": 9
-    },
-    {
-      "id": "t11",
-      "t": "Comprar en línea la entrada del Skydeck (martes 10:30)",
-      "m": "Igual: la fila de taquilla es la que quita tiempo",
-      "done": false,
-      "ord": 10
-    },
-    {
-      "id": "t12",
-      "t": "Art Institute: se queda el lunes",
-      "m": "Decidido — va a las 1:15 pm, antes del Shedd",
-      "done": true,
-      "ord": 11
-    }
-  ],
-  "done": {},
-  "decisions": {},
   "days": [
     {
       "n": 1,
@@ -564,5 +465,112 @@
         }
       ]
     }
-  ]
+  ],
+  "expenses": [
+    {
+      "id": "mtz90zzuy7pa",
+      "what": "Uber1",
+      "amt": 43,
+      "cat": "transporte",
+      "who": "María Luisa",
+      "at": 1789269777210
+    },
+    {
+      "id": "mtxhjgwpbngu",
+      "what": "Reserva Purple Pig",
+      "amt": 70,
+      "cat": "comida",
+      "who": "María Luisa",
+      "at": 1789163143513
+    },
+    {
+      "id": "mtxf84l4av6k",
+      "what": "CityPass",
+      "amt": 1022,
+      "cat": "tours",
+      "who": "María Luisa",
+      "at": 1789159255097
+    }
+  ],
+  "todos": [
+    {
+      "id": "t1",
+      "t": "Reservar Gilt Bar para el domingo 7:00 pm",
+      "m": "Día 1 · estaba marcado en rojo en la hoja",
+      "done": false,
+      "ord": 1
+    },
+    {
+      "id": "t2",
+      "t": "Comprar el City Pass o los tickets del Architecture Boat Tour",
+      "m": "Listo: confirmado para el domingo a las 4:00 pm",
+      "done": true,
+      "ord": 2
+    },
+    {
+      "id": "t3",
+      "t": "Son 7 en total: las reservas están bien",
+      "m": "Confirmado — los cinco brunches quedaron correctos",
+      "done": true,
+      "ord": 3
+    },
+    {
+      "id": "t4",
+      "t": "Reservar Girl & the Goat (martes en la noche)",
+      "m": "Se reserva con semanas de anticipación",
+      "done": false,
+      "ord": 4
+    },
+    {
+      "id": "t5",
+      "t": "Reservar The Purple Pig (miércoles en la noche)",
+      "m": "Listo: miércoles 8:45 pm",
+      "done": true,
+      "ord": 5
+    },
+    {
+      "id": "t6",
+      "t": "Reservar mesa en The Robey · Up Room (viernes)",
+      "m": "Azotea, última noche larga",
+      "done": false,
+      "ord": 6
+    },
+    {
+      "id": "t7",
+      "t": "Descargar la app Ventra para el metro (la \"L\")",
+      "m": "También sirve Apple Pay en los torniquetes",
+      "done": false,
+      "ord": 7
+    },
+    {
+      "id": "t8",
+      "t": "Poner el presupuesto real de la vaca en Ajustes",
+      "m": "Está en $9.000 como marcador, no es el número de ustedes",
+      "done": true,
+      "ord": 8
+    },
+    {
+      "id": "t10",
+      "t": "Comprar en línea la entrada del Shedd Aquarium (lunes)",
+      "m": "Con hora para las 3:30 pm, y confirmar hasta qué hora dejan entrar",
+      "done": false,
+      "ord": 9
+    },
+    {
+      "id": "t11",
+      "t": "Comprar en línea la entrada del Skydeck (martes 10:30)",
+      "m": "Igual: la fila de taquilla es la que quita tiempo",
+      "done": false,
+      "ord": 10
+    },
+    {
+      "id": "t12",
+      "t": "Art Institute: se queda el lunes",
+      "m": "Decidido — va a las 1:15 pm, antes del Shedd",
+      "done": true,
+      "ord": 11
+    }
+  ],
+  "done": {},
+  "decisions": {}
 }
