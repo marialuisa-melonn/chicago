@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-13T03:24:06.220Z",
+  "updatedAt": "2026-09-13T03:53:13.349Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -467,6 +467,14 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mtza3voow4gx",
+      "what": "Uber2",
+      "amt": 52,
+      "cat": "transporte",
+      "who": "Valen",
+      "at": 1789271591208
+    },
     {
       "id": "mtz92frg7c59",
       "what": "UberXXL",
