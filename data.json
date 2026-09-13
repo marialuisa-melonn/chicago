@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-13T03:53:13.349Z",
+  "updatedAt": "2026-09-13T04:14:13.242Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -467,6 +467,14 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mtzauvz9g5d1",
+      "what": "Uber3",
+      "amt": 50,
+      "cat": "transporte",
+      "who": "Susi",
+      "at": 1789272851301
+    },
     {
       "id": "mtza3voow4gx",
       "what": "Uber2",
