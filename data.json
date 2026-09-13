@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-13T03:22:59.138Z",
+  "updatedAt": "2026-09-13T03:24:06.220Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -467,6 +467,14 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mtz92frg7c59",
+      "what": "UberXXL",
+      "amt": 11,
+      "cat": "transporte",
+      "who": "María Luisa",
+      "at": 1789269844300
+    },
     {
       "id": "mtz90zzuy7pa",
       "what": "Uber1",
