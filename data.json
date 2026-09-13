@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-13T13:13:41.629Z",
+  "updatedAt": "2026-09-13T17:13:57.077Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -467,6 +467,14 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu02pmguwfex",
+      "what": "Hotel",
+      "amt": 5186,
+      "cat": "alojamiento",
+      "who": "Susi V",
+      "at": 1789319634943
+    },
     {
       "id": "mtztpxjmurr6",
       "what": "Uber Susi",
