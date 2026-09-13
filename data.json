@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-13T20:43:53.490Z",
+  "updatedAt": "2026-09-13T20:43:56.157Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -628,7 +628,8 @@
     }
   ],
   "done": {
-    "d1a": true
+    "d1a": true,
+    "d1b": true
   },
   "decisions": {}
 }
