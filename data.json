@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-13T17:13:57.077Z",
+  "updatedAt": "2026-09-13T17:21:23.749Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -467,6 +467,14 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu02z73vxojr",
+      "what": "Beatrix",
+      "amt": 249,
+      "cat": "comida",
+      "who": "—",
+      "at": 1789320081595
+    },
     {
       "id": "mu02pmguwfex",
       "what": "Hotel",
