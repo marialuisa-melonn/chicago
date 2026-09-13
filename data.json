@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-13T21:22:17.925Z",
+  "updatedAt": "2026-09-13T21:23:17.935Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -467,6 +467,14 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu0bmavmp9oy",
+      "what": "7eleven",
+      "amt": 45,
+      "cat": "comida",
+      "who": "Pepe",
+      "at": 1789334596498
+    },
     {
       "id": "mu0bkzpvkxvt",
       "what": "Beatrix",
