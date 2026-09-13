@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-13T21:21:04.194Z",
+  "updatedAt": "2026-09-13T21:21:57.017Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -474,14 +474,6 @@
       "cat": "comida",
       "who": "—",
       "at": 1789334462777
-    },
-    {
-      "id": "mu02z73vxojr",
-      "what": "Beatrix",
-      "amt": 249,
-      "cat": "comida",
-      "who": "—",
-      "at": 1789320081595
     },
     {
       "id": "mu02pmguwfex",
