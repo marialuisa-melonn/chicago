@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-13T20:43:56.157Z",
+  "updatedAt": "2026-09-13T21:21:04.194Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -467,6 +467,14 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu0bjfp59bcp",
+      "what": "Eataly",
+      "amt": 74,
+      "cat": "comida",
+      "who": "—",
+      "at": 1789334462777
+    },
     {
       "id": "mu02z73vxojr",
       "what": "Beatrix",
