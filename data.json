@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-14T21:25:05.948Z",
+  "updatedAt": "2026-09-14T21:25:40.497Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -480,7 +480,7 @@
       "what": "Vino rooftop",
       "amt": 142,
       "cat": "comida",
-      "who": "Pepe",
+      "who": "María Luisa",
       "day": "2026-09-14",
       "fijo": false,
       "at": 1789421103931
