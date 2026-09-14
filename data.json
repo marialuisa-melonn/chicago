@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-14T13:37:26.925863Z",
+  "updatedAt": "2026-09-14T15:44:00.324Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -475,6 +475,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu1ext1ulrbm",
+      "what": "Regalo",
+      "amt": 100,
+      "cat": "shopping",
+      "who": "—",
+      "day": "2026-09-13",
+      "fijo": false,
+      "at": 1789400638290
+    },
     {
       "id": "mu0l1tmu3l0a",
       "what": "Naia",
