@@ -373,7 +373,7 @@ body.is-admin .adminlink{color:var(--brass);border-color:var(--brass);opacity:1}
 .dcol{flex:1;min-width:0;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;cursor:pointer;border:none;background:none;padding:0;position:relative;z-index:2}
 .dbar{width:100%;max-width:30px;border-radius:4px 4px 0 0;background:var(--brass);transition:height .7s cubic-bezier(.22,.9,.3,1)}
 .dbar.over{background:var(--star)}
-.dbar.empty{background:var(--surface-3);border-radius:2px}
+.dbar.vacio{background:var(--surface-3);border-radius:2px}
 .dcol.sel .dbar{box-shadow:0 0 0 2px var(--surface),0 0 0 3.5px var(--text-2)}
 .dval{font-family:var(--fm);font-size:9.5px;color:var(--text);margin-bottom:3px;white-space:nowrap;font-variant-numeric:tabular-nums}
 .dref{position:absolute;left:0;right:0;border-top:1.5px dashed var(--text-2);opacity:.6;pointer-events:none;z-index:1}
@@ -933,7 +933,7 @@ function renderOcio(){
         const over = esDiaCol(c) && c.v > ref;
         return `<button class="dcol ${c.k===State.ocioSel?'sel':''}" data-ocio="${c.k}" aria-label="${c.sub} ${c.top}: ${money(c.v)}">
           ${c.v ? `<span class="dval">${short(c.v)}</span>` : ''}
-          <span class="dbar ${c.v?'':'empty'} ${over?'over':''}" style="height:${h.toFixed(1)}px"></span>
+          <span class="dbar ${c.v?'':'vacio'} ${over?'over':''}" style="height:${h.toFixed(1)}px"></span>
         </button>`;
       }).join('')}
     </div>
