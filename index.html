@@ -360,6 +360,36 @@ body.is-admin .adminlink{color:var(--brass);border-color:var(--brass);opacity:1}
 .admsg.bad{background:var(--star-soft);color:var(--star);border:1px solid var(--star)}
 .admsg.good{background:var(--good-soft);color:var(--good);border:1px solid var(--good)}
 .admsg b{font-weight:800}
+.ocio-top{padding:14px 14px 2px}
+.ocio-eq{display:grid;grid-template-columns:1fr auto;gap:5px 12px;font-size:13px;color:var(--text-2);font-variant-numeric:tabular-nums}
+.ocio-eq .r{font-family:var(--fm);text-align:right;color:var(--text)}
+.ocio-eq .tot{border-top:1px solid var(--line-soft);padding-top:7px;margin-top:1px;font-weight:800;color:var(--text)}
+.ocio-big{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;margin-top:15px}
+.ocio-big .k{font-family:var(--fm);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.ocio-big .v{font-family:var(--fd);font-weight:800;font-size:42px;line-height:.9;font-variant-numeric:tabular-nums}
+.ocio-big .s{font-family:var(--fm);font-size:11.5px;color:var(--text-2);text-align:right;line-height:1.55;font-variant-numeric:tabular-nums}
+.ocio-big .s b{color:var(--text);font-weight:600}
+.dchart{position:relative;display:flex;align-items:flex-end;gap:5px;height:128px;margin:20px 14px 0}
+.dcol{flex:1;min-width:0;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;cursor:pointer;border:none;background:none;padding:0;position:relative;z-index:2}
+.dbar{width:100%;max-width:30px;border-radius:4px 4px 0 0;background:var(--brass);transition:height .7s cubic-bezier(.22,.9,.3,1)}
+.dbar.over{background:var(--star)}
+.dbar.empty{background:var(--surface-3);border-radius:2px}
+.dcol.sel .dbar{box-shadow:0 0 0 2px var(--surface),0 0 0 3.5px var(--text-2)}
+.dval{font-family:var(--fm);font-size:9.5px;color:var(--text);margin-bottom:3px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.dref{position:absolute;left:0;right:0;border-top:1.5px dashed var(--text-2);opacity:.6;pointer-events:none;z-index:1}
+.dref span{position:absolute;left:0;top:-16px;font-family:var(--fm);font-size:9px;color:var(--text-2);background:var(--surface);padding:0 4px 0 0}
+.daxis{display:flex;gap:5px;margin:6px 14px 0}
+.daxis span{flex:1;min-width:0;text-align:center;font-family:var(--fm);font-size:8.5px;line-height:1.25;color:var(--muted);text-transform:lowercase}
+.daxis span b{display:block;font-family:var(--fd);font-size:15px;font-weight:800;color:var(--text-2)}
+.daxis span.hoy,.daxis span.hoy b{color:var(--brass)}
+.ddetail{margin:14px 14px 14px;padding-top:11px;border-top:1px solid var(--line-soft)}
+.ddetail .dh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:6px}
+.ddetail .dh b{font-family:var(--fd);font-size:21px;font-weight:800}
+.ddetail .dh span{font-family:var(--fm);font-size:11px;color:var(--text-2);font-variant-numeric:tabular-nums;text-align:right}
+.dline{display:flex;justify-content:space-between;gap:10px;padding:5px 0;font-size:13px;border-bottom:1px dashed var(--line-soft)}
+.dline:last-child{border-bottom:none}
+.dline em{font-style:normal;font-family:var(--fm);font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.exp[data-editexp]{cursor:pointer}
 .toast{position:fixed;left:50%;bottom:88px;transform:translate(-50%,16px);z-index:90;background:var(--text);color:var(--bg);font-size:13px;padding:10px 16px;border-radius:100px;box-shadow:var(--shadow-lift);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;max-width:88vw;text-align:center}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 </style>
@@ -430,6 +460,9 @@ body.is-admin .adminlink{color:var(--brass);border-color:var(--brass);opacity:1}
     <div class="adminonly" style="margin-top:12px">
       <button class="btn" id="addExpBtn" style="width:100%">+ Registrar gasto</button>
     </div>
+
+    <div class="sec-head"><h2>Para ocio</h2><span class="hint">sin gastos fijos</span></div>
+    <div class="card" id="ocioBox"></div>
 
     <div class="sec-head"><h2>En qué se va</h2><span class="hint">por categoría</span></div>
     <div class="card" style="padding:11px 13px" id="catBox"></div>
@@ -608,7 +641,7 @@ const POLLS = [
       {k:'beatrix-loop', l:'Beatrix Loop', d:'Ya sabemos que nos gusta; hay sede en el Loop.'},
       {k:'cindys', l:"Brunch en Cindy's", d:'Y nos ahorramos la vuelta de la noche.'}
     ]},
-  { id:'p-cheval', title:'¿Au Cheval o Small Cheval?', q:'Martes 12:30, bajando del Skydeck. La diferencia real es la fila.',
+  { id:'p-cheval', title:'¿Au Cheval o Small Cheval?', q:'Martes 12:30, saliendo del Art Institute. La diferencia real es la fila.',
     options:[
       {k:'au', l:'Au Cheval', d:'La hamburguesa famosa. Puede ser 1–2 horas de espera.'},
       {k:'small', l:'Small Cheval', d:'Casi lo mismo, sin fila, y nos deja la tarde libre.'}
@@ -815,6 +848,7 @@ async function pushData(msg){
 }
 
 /* ---------- acciones (solo administradora) ---------- */
+function updateExpenseLocal(id, patch){ const x = State.expenses.find(y=>y.id===id); if(!x) return; Object.assign(x, patch); renderBote(); renderHoy(); queueSave('Editar gasto: ' + (x.what||'')); }
 function addExpenseLocal(e){ State.expenses.unshift({ id:uid(), ...e, at:Date.now() }); renderBote(); renderHoy(); queueSave('Gasto: ' + (e.what||'')); }
 function delExpenseLocal(id){ State.expenses = State.expenses.filter(x=>x.id!==id); renderBote(); renderHoy(); queueSave('Borrar gasto'); }
 function setDone(id, val){ if(val) State.done[id] = true; else delete State.done[id]; renderDay(); renderHoy(); renderMeta(); queueSave('Marcar plan'); }
@@ -823,6 +857,99 @@ function setTodoLocal(id, done){ const x = State.todos.find(y=>y.id===id); if(x)
 function delTodoLocal(id){ State.todos = State.todos.filter(x=>x.id!==id); renderTodos(); renderHoy(); queueSave('Borrar pendiente'); }
 function setDecision(pollId, opt){ State.decisions[pollId] = (State.decisions[pollId]===opt ? null : opt); renderPolls(); renderDay(); queueSave('Decisión'); }
 function saveCfgLocal(patch){ Object.assign(State.cfg, patch); renderBote(); renderHoy(); queueSave('Ajustes de la vaca'); }
+
+/* ---------- gastos fijos vs ocio ---------- */
+const dayKey = ts => { const d = new Date(ts || Date.now()); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); };
+const addDays = (iso, k) => { const d = new Date(iso + 'T12:00:00'); d.setDate(d.getDate() + k); return dayKey(d.getTime()); };
+const isFijo = e => e.fijo === true || (e.fijo === undefined && e.cat === 'alojamiento');
+const expDay = e => e.day || dayKey(e.at);
+const DOW3 = ['dom','lun','mar','mié','jue','vie','sáb'];
+const sumAmt = arr => arr.reduce((a,e)=>a + (+e.amt || 0), 0);
+
+function ocioStats(){
+  const fijosArr = State.expenses.filter(isFijo);
+  const fijos = sumAmt(fijosArr);
+  const budget = +State.cfg.budget || 0;
+  const ocio = budget - fijos;
+  const gastado = sumAmt(State.expenses.filter(e=>!isFijo(e)));
+  const queda = ocio - gastado;
+  const p = tripPos();
+  const diasRest = p.phase==='antes' ? 7 : p.phase==='durante' ? (7 - p.idx) : 0;
+  const hoy = dayKey();
+  return { fijosArr, fijos, budget, ocio, gastado, queda, diasRest,
+           porDiaPlan: ocio / 7,
+           porDiaRest: diasRest ? Math.max(0, queda) / diasRest : 0,
+           hoy, gastadoHoy: sumAmt(State.expenses.filter(e=>!isFijo(e) && expDay(e)===hoy)) };
+}
+function ocioCols(){
+  const llegada = addDays(TRIP.start, -1);
+  const cols = [];
+  const ocio = State.expenses.filter(e=>!isFijo(e));
+  const antes = ocio.filter(e=>expDay(e) < llegada);
+  if(antes.length) cols.push({ k:'antes', top:'—', sub:'antes', items:antes });
+  const lleg = ocio.filter(e=>expDay(e) === llegada);
+  if(lleg.length) cols.push({ k:llegada, top:String(+llegada.slice(8)), sub:'llegada', items:lleg });
+  for(let i=0;i<7;i++){
+    const k = addDays(TRIP.start, i);
+    cols.push({ k, top:String(+k.slice(8)), sub:DOW3[new Date(k+'T12:00:00').getDay()], items:ocio.filter(e=>expDay(e)===k) });
+  }
+  const tras = ocio.filter(e=>expDay(e) > TRIP.end);
+  if(tras.length) cols.push({ k:'despues', top:'—', sub:'después', items:tras });
+  cols.forEach(c=>c.v = sumAmt(c.items));
+  return cols;
+}
+function renderOcio(){
+  const box = $('#ocioBox'); if(!box) return;
+  const s = ocioStats(), cols = ocioCols();
+  const ref = s.porDiaPlan, H = 96;
+  const scale = Math.max(ref, ...cols.map(c=>c.v), 1) * 1.12;
+  const short = v => v >= 1000 ? '$' + (v/1000).toFixed(1).replace('.0','') + 'k' : '$' + Math.round(v);
+  if(!State.ocioSel || !cols.some(c=>c.k===State.ocioSel)){
+    State.ocioSel = cols.some(c=>c.k===s.hoy) ? s.hoy : ((cols.filter(c=>c.v>0).pop() || cols[0]).k);
+  }
+  const sel = cols.find(c=>c.k===State.ocioSel);
+  const nombresFijos = [...new Set(s.fijosArr.map(e=>e.what||'Gasto'))].join(', ') || 'ninguno todavía';
+  const fijosDelDia = s.fijosArr.filter(e=> sel.k==='antes' ? expDay(e) < addDays(TRIP.start,-1) : sel.k==='despues' ? expDay(e) > TRIP.end : expDay(e)===sel.k);
+  const selNombre = sel.k==='antes' ? 'Antes del viaje' : sel.k==='despues' ? 'Después del viaje'
+    : (sel.sub==='llegada' ? 'Llegada · ' : '') + ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'][new Date(sel.k+'T12:00:00').getDay()] + ' ' + (+sel.k.slice(8));
+  const esDiaViaje = sel.k >= TRIP.start && sel.k <= TRIP.end;
+
+  box.innerHTML = `
+    <div class="ocio-top">
+      <div class="ocio-eq">
+        <span>Presupuesto de la vaca</span><span class="r">${money(s.budget)}</span>
+        <span>Fijos · ${esc(nombresFijos)}</span><span class="r">−${money(s.fijos)}</span>
+        <span class="tot">Para ocio</span><span class="r tot">${money(s.ocio)}</span>
+      </div>
+      <div class="ocio-big">
+        <div><div class="k">Queda para ocio</div><div class="v" style="${s.queda<0?'color:var(--star)':''}">${money(s.queda)}</div></div>
+        <div class="s">gastado <b>${money(s.gastado)}</b>${s.diasRest ? `<br>${s.diasRest} ${s.diasRest===1?'día':'días'} · <b>${money(s.porDiaRest)}</b>/día` : ''}</div>
+      </div>
+    </div>
+    <div class="dchart" role="group" aria-label="Gasto de ocio por día">
+      <div class="dref" style="bottom:${(ref/scale*H).toFixed(1)}px"><span>plan ${short(ref)}/día</span></div>
+      ${cols.map(c=>{
+        const h = c.v ? Math.max(4, c.v/scale*H) : 3;
+        const over = esDiaCol(c) && c.v > ref;
+        return `<button class="dcol ${c.k===State.ocioSel?'sel':''}" data-ocio="${c.k}" aria-label="${c.sub} ${c.top}: ${money(c.v)}">
+          ${c.v ? `<span class="dval">${short(c.v)}</span>` : ''}
+          <span class="dbar ${c.v?'':'empty'} ${over?'over':''}" style="height:${h.toFixed(1)}px"></span>
+        </button>`;
+      }).join('')}
+    </div>
+    <div class="daxis" aria-hidden="true">
+      ${cols.map(c=>`<span class="${c.k===s.hoy?'hoy':''}"><b>${c.top}</b>${c.k===s.hoy?'hoy':c.sub}</span>`).join('')}
+    </div>
+    <div class="ddetail">
+      <div class="dh"><b>${esc(selNombre)}</b>
+        <span>${money(sel.v)}${esDiaViaje ? ` de ${money(ref)}` : ''}</span></div>
+      ${sel.items.length
+        ? sel.items.map(e=>`<div class="dline"><span>${esc(e.what||'Gasto')} <span style="color:var(--muted)">· ${esc(e.who||'—')}</span></span><em>${money(e.amt)}</em></div>`).join('')
+        : `<p class="note">${sel.k===s.hoy ? 'Hoy todavía no hay gastos de ocio.' : 'Sin gastos de ocio este día.'}</p>`}
+      ${fijosDelDia.length ? `<p class="note" style="margin-top:7px">Además, fijo: ${fijosDelDia.map(e=>esc(e.what)+' '+money(e.amt)).join(', ')} — no cuenta aquí.</p>` : ''}
+    </div>`;
+}
+function esDiaCol(c){ return c.k >= TRIP.start && c.k <= TRIP.end; }
 
 /* ---------- toast ---------- */
 let toastT = null;
@@ -960,6 +1087,7 @@ function renderHoy(){
         <div style="font-family:var(--fm);font-size:16px;font-variant-numeric:tabular-nums">${money(spent)}</div></div>
       </div>
       <div style="height:9px;background:var(--surface-3);border-radius:100px;overflow:hidden;margin-top:11px"><i style="display:block;height:100%;width:${pct}%;background:${pct>90?'var(--star)':'var(--brass)'};border-radius:100px;transition:width .9s cubic-bezier(.22,.9,.3,1)"></i></div>
+      ${(()=>{ const o = ocioStats(); return o.diasRest ? `<div style="display:flex;justify-content:space-between;gap:10px;margin-top:12px;padding-top:10px;border-top:1px solid var(--line-soft);font-size:13px;color:var(--text-2)"><span>Ocio hoy</span><span style="font-family:var(--fm);font-variant-numeric:tabular-nums;color:${o.gastadoHoy>o.porDiaRest?'var(--star)':'var(--text)'}">${money(o.gastadoHoy)} de ${money(o.porDiaRest)}</span></div>` : ''; })()}
       <button class="btn ghost sm" style="margin-top:12px" onclick="go('bote')">Ver la vaca</button>
     </div>
     <div class="foot">Chicago los espera.</div>`;
@@ -1044,6 +1172,7 @@ function renderDay(){
    VACA
    ============================================================ */
 function renderBote(){
+  renderOcio();
   const spent = State.expenses.reduce((a,b)=>a+(+b.amt||0),0);
   const b = +State.cfg.budget || 0, left = b - spent;
   const pct = b ? Math.min(100, spent/b*100) : 0, C = 2*Math.PI*80;
@@ -1080,9 +1209,10 @@ function renderBote(){
     : State.expenses.map(e=>{
         const c = CATS.find(x=>x.k===e.cat) || CATS[5];
         const dt = new Date(e.at||Date.now());
-        return `<div class="exp"><div class="ei">${c.i}</div>
-          <div class="em"><div class="et">${esc(e.what||'Gasto')}</div>
-          <div class="es">${esc(e.who||'—')} · ${dt.getDate()}/${dt.getMonth()+1}${State.cfg.showCop?' · '+cop(e.amt):''}</div></div>
+        const dk = expDay(e);
+        return `<div class="exp" ${State.admin?`data-editexp="${e.id}"`:''}><div class="ei">${c.i}</div>
+          <div class="em"><div class="et">${esc(e.what||'Gasto')} ${isFijo(e)?'<span class="pill plan" style="vertical-align:2px">fijo</span>':''}</div>
+          <div class="es">${esc(e.who||'—')} · ${DOW3[new Date(dk+'T12:00:00').getDay()]} ${+dk.slice(8)}/${+dk.slice(5,7)}${State.cfg.showCop?' · '+cop(e.amt):''}</div></div>
           <div class="ev2">${money(e.amt)}</div>
           ${State.admin?`<button class="del" data-del="${e.id}" aria-label="Borrar gasto">✕</button>`:''}
         </div>`;
@@ -1222,22 +1352,41 @@ function openSheet(html){ $('#sheet').innerHTML = '<div class="grab"></div>' + h
 function closeSheet(){ $('#scrim').classList.remove('on'); }
 $('#scrim').addEventListener('click', e=>{ if(e.target.id==='scrim') closeSheet(); });
 
-function openExpense(){
-  openSheet(`<h3>Registrar gasto</h3>
-    <label class="field"><span class="fl">¿Qué fue?</span><input id="exWhat" placeholder="Cena en Girl & the Goat"></label>
+function openExpense(id){
+  const ed = id ? State.expenses.find(x=>x.id===id) : null;
+  const hoy = dayKey();
+  const v = ed || { what:'', amt:'', cat:'comida', who:'', day:hoy };
+  const dia = ed ? expDay(ed) : hoy;
+  const fijo = ed ? isFijo(ed) : false;
+  openSheet(`<h3>${ed ? 'Editar gasto' : 'Registrar gasto'}</h3>
+    <label class="field"><span class="fl">¿Qué fue?</span><input id="exWhat" value="${esc(v.what)}" placeholder="Cena en Labriola"></label>
     <div class="row2">
-      <label class="field"><span class="fl">Monto (USD)</span><input id="exAmt" type="number" inputmode="decimal" step="0.01" placeholder="0.00"></label>
-      <label class="field"><span class="fl">Categoría</span><select id="exCat">${CATS.map(c=>`<option value="${c.k}">${c.i} ${c.l}</option>`).join('')}</select></label>
+      <label class="field"><span class="fl">Monto (USD)</span><input id="exAmt" type="number" inputmode="decimal" step="0.01" value="${esc(v.amt)}" placeholder="0.00"></label>
+      <label class="field"><span class="fl">Categoría</span><select id="exCat">${CATS.map(c=>`<option value="${c.k}" ${v.cat===c.k?'selected':''}>${c.i} ${c.l}</option>`).join('')}</select></label>
     </div>
-    <label class="field"><span class="fl">¿Quién pagó?</span><input id="exWho" placeholder="María Luisa"></label>
-    <button class="btn" style="width:100%;margin-top:4px" id="exOk">Echar a la vaca</button>`);
-  setTimeout(()=>$('#exWhat').focus(), 120);
+    <div class="row2">
+      <label class="field"><span class="fl">Día</span><input id="exDay" type="date" value="${dia}"></label>
+      <label class="field"><span class="fl">¿Quién pagó?</span><input id="exWho" value="${esc(v.who==='—'?'':v.who)}" placeholder="María Luisa"></label>
+    </div>
+    <label style="display:flex;align-items:flex-start;gap:10px;padding:11px 12px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;margin-bottom:12px;cursor:pointer">
+      <input type="checkbox" id="exFijo" ${fijo?'checked':''} style="width:18px;height:18px;margin-top:1px;accent-color:var(--brass);flex-shrink:0">
+      <span style="font-size:14px;line-height:1.35">Gasto fijo, como el hotel o el CityPass<br><span class="note">No se descuenta del presupuesto de ocio</span></span></label>
+    <button class="btn" style="width:100%" id="exOk">${ed ? 'Guardar cambios' : 'Echar a la vaca'}</button>
+    ${ed ? '<button class="btn ghost" style="width:100%;margin-top:8px;color:var(--star);border-color:var(--star)" id="exDel">Borrar este gasto</button>' : ''}`);
+  if(!ed) setTimeout(()=>$('#exWhat').focus(), 120);
+  let tocoFijo = false;
+  $('#exFijo').addEventListener('change', ()=>{ tocoFijo = true; });
+  $('#exCat').addEventListener('change', ()=>{ if(!tocoFijo) $('#exFijo').checked = $('#exCat').value === 'alojamiento'; });
   $('#exOk').onclick = ()=>{
     const amt = parseFloat($('#exAmt').value);
     if(!amt || amt<=0){ $('#exAmt').focus(); return; }
-    addExpenseLocal({ what:$('#exWhat').value.trim()||'Gasto', amt, cat:$('#exCat').value, who:$('#exWho').value.trim()||'—' });
-    closeSheet(); burstAt(window.innerWidth/2, window.innerHeight*0.4);
+    const datos = { what:$('#exWhat').value.trim()||'Gasto', amt, cat:$('#exCat').value,
+                    who:$('#exWho').value.trim()||'—', day:$('#exDay').value || hoy, fijo:$('#exFijo').checked };
+    if(ed){ updateExpenseLocal(ed.id, datos); closeSheet(); }
+    else { addExpenseLocal(datos); closeSheet(); burstAt(window.innerWidth/2, window.innerHeight*0.4); }
   };
+  const bd = $('#exDel');
+  if(bd) bd.onclick = ()=>{ if(confirm('¿Borrar "' + (ed.what||'este gasto') + '"?')){ delExpenseLocal(ed.id); closeSheet(); } };
 }
 function openConfig(){
   openSheet(`<h3>Ajustes de la vaca</h3>
@@ -1363,8 +1512,12 @@ document.addEventListener('click', e=>{
   if(tdel){ delTodoLocal(tdel.dataset.todel); return; }
   const del = e.target.closest('[data-del]');
   if(del){ if(confirm('¿Borrar este gasto?')) delExpenseLocal(del.dataset.del); return; }
+  const ex = e.target.closest('[data-editexp]');
+  if(ex){ openExpense(ex.dataset.editexp); return; }
+  const oc = e.target.closest('[data-ocio]');
+  if(oc){ State.ocioSel = oc.dataset.ocio; renderOcio(); return; }
 });
-$('#addExpBtn').onclick = openExpense;
+$('#addExpBtn').onclick = ()=>openExpense();
 $('#cfgBtn').onclick = openConfig;
 $('#adminBtn').onclick = openAdmin;
 $('#synRef').onclick = ()=>loadData(false, true);
