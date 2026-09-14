@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-14T00:11:27.658Z",
+  "updatedAt": "2026-09-14T01:47:19.236Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -467,6 +467,14 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu0l1tmu3l0a",
+      "what": "Naia",
+      "amt": 250,
+      "cat": "comida",
+      "who": "—",
+      "at": 1789350437191
+    },
     {
       "id": "mu0bmavmp9oy",
       "what": "7eleven",
