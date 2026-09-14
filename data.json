@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-14T16:39:38.291Z",
+  "updatedAt": "2026-09-14T21:25:05.948Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -475,6 +475,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu1r4gfvcxtm",
+      "what": "Vino rooftop",
+      "amt": 142,
+      "cat": "comida",
+      "who": "Pepe",
+      "day": "2026-09-14",
+      "fijo": false,
+      "at": 1789421103931
+    },
     {
       "id": "mu1gxcuha1kd",
       "what": "Desayuno",
