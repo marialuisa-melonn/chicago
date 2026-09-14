@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-14T01:47:19.236Z",
+  "updatedAt": "2026-09-14T13:37:26.925863Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -77,9 +77,9 @@
       "dow": "Lunes",
       "dm": "14 sep",
       "hood": "The Loop · Museum Campus",
-      "title": "Parque, museo y acuario",
+      "title": "Parque, acuario y alturas",
       "el": {
-        "name": "Loop: todas las líneas · Shedd: a pie por la orilla",
+        "name": "Loop: todas las líneas · Shedd y Skydeck: carro o a pie",
         "color": "#0F6E93"
       },
       "walk": "≈ 7 km caminando",
@@ -96,10 +96,10 @@
         },
         {
           "id": "d2b",
-          "time": "12:30",
-          "slot": "Tarde",
+          "time": "10:00",
+          "slot": "Mañana",
           "title": "Millennium Park",
-          "where": "Media hora larga y suficiente: es al aire libre y el Bean queda a dos pasos del museo.",
+          "where": "Temprano, antes de que se llene: el Bean, la Crown Fountain y el Lurie Garden caben en una hora larga.",
           "status": "plan",
           "map": "Millennium Park",
           "tag": "🫘",
@@ -111,48 +111,55 @@
           ]
         },
         {
-          "id": "d2art",
-          "time": "13:15",
-          "slot": "Museo",
-          "title": "Art Institute",
-          "where": "Cruzando la calle desde Millennium Park, así que no hay que devolverse. Con dos horas alcanza yendo directo a lo bueno.",
-          "status": "plan",
-          "url": "https://www.artic.edu/",
-          "map": "Art Institute of Chicago",
-          "tag": "🖼️",
-          "sub": [
-            "American Gothic",
-            "Nighthawks",
-            "Los impresionistas · 2º piso",
-            "Las miniaturas Thorne"
-          ]
-        },
-        {
           "id": "d2shedd",
-          "time": "15:30",
+          "time": "13:00",
           "slot": "Acuario",
           "title": "Shedd Aquarium",
-          "where": "A 20 minutos a pie desde el museo bordeando el lago. Saquen la entrada con hora para las 3:30 y confirmen hasta qué hora dejan entrar, que es lo justo del día.",
+          "where": "Desde Millennium Park son unos 20 minutos a pie bordeando el lago. La foto del skyline se toma desde la explanada, a la salida.",
           "status": "plan",
           "url": "https://www.sheddaquarium.org/",
           "map": "Shedd Aquarium",
           "tag": "🐠",
           "sub": [
-            "Entrada con hora · 3:30 pm",
             "La foto del skyline es desde la explanada",
             "Las belugas y el arrecife"
           ]
         },
         {
           "id": "d2d",
-          "time": "20:00",
+          "time": "21:30",
           "slot": "Noche",
           "title": "Cindy's Rooftop",
-          "where": "Terraza sobre Millennium Park. La vista es el plan.",
-          "status": "plan",
+          "where": "Pendiente: si queda ánimo después de cenar. La terraza queda sobre Millennium Park.",
+          "status": "voto",
           "url": "https://cindysrooftop.com/",
           "map": "Cindy's Rooftop",
           "tag": "🌆"
+        },
+        {
+          "id": "d3sky",
+          "time": "16:30",
+          "slot": "Mirador",
+          "title": "Skydeck · Willis Tower",
+          "where": "Del Shedd son unos 10 minutos en carro. A esa hora todavía se ve la ciudad de día y el lago con buena luz.",
+          "status": "plan",
+          "url": "https://theskydeck.com/",
+          "map": "Skydeck Chicago Willis Tower",
+          "tag": "🏙️",
+          "sub": [
+            "The Ledge · los balcones de vidrio",
+            "Piso 103"
+          ]
+        },
+        {
+          "id": "d2labriola",
+          "time": "19:30",
+          "slot": "Cena",
+          "title": "Labriola",
+          "where": "Reservado. Si la reserva no es a las 7:30, cambien la hora con Editar.",
+          "status": "ok",
+          "map": "Labriola Chicago",
+          "tag": "🍝"
         }
       ]
     },
@@ -162,29 +169,13 @@
       "dow": "Martes",
       "dm": "15 sep",
       "hood": "West Loop · Fulton Market",
-      "title": "Las alturas y la hamburguesa",
+      "title": "El museo y la hamburguesa",
       "el": {
-        "name": "Green / Pink · Morgan",
+        "name": "Loop para el museo · Green / Pink a Morgan",
         "color": "#009B3A"
       },
       "walk": "≈ 6 km caminando",
       "events": [
-        {
-          "id": "d3sky",
-          "time": "10:30",
-          "slot": "Mirador",
-          "title": "Skydeck · Willis Tower",
-          "where": "Sin madrugar y antes de la hamburguesa. Está a 15 minutos a pie de Au Cheval, así que queda de camino al West Loop. Compren la entrada en línea: la fila de taquilla es la que mata.",
-          "status": "plan",
-          "url": "https://theskydeck.com/",
-          "map": "Skydeck Chicago Willis Tower",
-          "tag": "🏙️",
-          "sub": [
-            "The Ledge · los balcones de vidrio",
-            "Entrada en línea con hora",
-            "Piso 103"
-          ]
-        },
         {
           "id": "d3a",
           "time": "12:30",
@@ -235,6 +226,23 @@
           "sub": [
             "Girl & the Goat",
             "Momotaro · Bar Izakaya"
+          ]
+        },
+        {
+          "id": "d2art",
+          "time": "11:00",
+          "slot": "Museo",
+          "title": "Art Institute",
+          "where": "Pasó para hoy porque va a llover: es plan bajo techo. Abre a las 11; si quieren más de hora y media, corran el almuerzo con Editar.",
+          "status": "plan",
+          "url": "https://www.artic.edu/",
+          "map": "Art Institute of Chicago",
+          "tag": "🖼️",
+          "sub": [
+            "American Gothic",
+            "Nighthawks",
+            "Los impresionistas · 2º piso",
+            "Las miniaturas Thorne"
           ]
         }
       ]
@@ -473,7 +481,9 @@
       "amt": 250,
       "cat": "comida",
       "who": "—",
-      "at": 1789350437191
+      "at": 1789350437191,
+      "day": "2026-09-13",
+      "fijo": false
     },
     {
       "id": "mu0bmavmp9oy",
@@ -481,7 +491,9 @@
       "amt": 45,
       "cat": "comida",
       "who": "Pepe",
-      "at": 1789334596498
+      "at": 1789334596498,
+      "day": "2026-09-13",
+      "fijo": false
     },
     {
       "id": "mu0bkzpvkxvt",
@@ -489,7 +501,9 @@
       "amt": 300,
       "cat": "comida",
       "who": "María Luisa",
-      "at": 1789334535379
+      "at": 1789334535379,
+      "day": "2026-09-13",
+      "fijo": false
     },
     {
       "id": "mu0bjfp59bcp",
@@ -497,7 +511,9 @@
       "amt": 74,
       "cat": "comida",
       "who": "—",
-      "at": 1789334462777
+      "at": 1789334462777,
+      "day": "2026-09-13",
+      "fijo": false
     },
     {
       "id": "mu02pmguwfex",
@@ -505,7 +521,9 @@
       "amt": 5186,
       "cat": "alojamiento",
       "who": "Susi V",
-      "at": 1789319634943
+      "at": 1789319634943,
+      "day": "2026-09-13",
+      "fijo": true
     },
     {
       "id": "mtztpxjmurr6",
@@ -513,7 +531,9 @@
       "amt": 47,
       "cat": "transporte",
       "who": "Susi V",
-      "at": 1789304532755
+      "at": 1789304532755,
+      "day": "2026-09-13",
+      "fijo": false
     },
     {
       "id": "mtzb8umjrkxh",
@@ -521,7 +541,9 @@
       "amt": 52,
       "cat": "comida",
       "who": "María Luisa",
-      "at": 1789273502731
+      "at": 1789273502731,
+      "day": "2026-09-12",
+      "fijo": false
     },
     {
       "id": "mtzauvz9g5d1",
@@ -529,7 +551,9 @@
       "amt": 50,
       "cat": "transporte",
       "who": "Susi",
-      "at": 1789272851301
+      "at": 1789272851301,
+      "day": "2026-09-12",
+      "fijo": false
     },
     {
       "id": "mtza3voow4gx",
@@ -537,7 +561,9 @@
       "amt": 52,
       "cat": "transporte",
       "who": "Valen",
-      "at": 1789271591208
+      "at": 1789271591208,
+      "day": "2026-09-12",
+      "fijo": false
     },
     {
       "id": "mtz92frg7c59",
@@ -545,7 +571,9 @@
       "amt": 11,
       "cat": "transporte",
       "who": "María Luisa",
-      "at": 1789269844300
+      "at": 1789269844300,
+      "day": "2026-09-12",
+      "fijo": false
     },
     {
       "id": "mtz90zzuy7pa",
@@ -553,7 +581,9 @@
       "amt": 43,
       "cat": "transporte",
       "who": "María Luisa",
-      "at": 1789269777210
+      "at": 1789269777210,
+      "day": "2026-09-12",
+      "fijo": false
     },
     {
       "id": "mtxhjgwpbngu",
@@ -561,7 +591,9 @@
       "amt": 70,
       "cat": "comida",
       "who": "María Luisa",
-      "at": 1789163143513
+      "at": 1789163143513,
+      "day": "2026-09-11",
+      "fijo": false
     },
     {
       "id": "mtxf84l4av6k",
@@ -569,7 +601,9 @@
       "amt": 1022,
       "cat": "tours",
       "who": "María Luisa",
-      "at": 1789159255097
+      "at": 1789159255097,
+      "day": "2026-09-11",
+      "fijo": true
     }
   ],
   "todos": [
@@ -632,13 +666,13 @@
     {
       "id": "t10",
       "t": "Comprar en línea la entrada del Shedd Aquarium (lunes)",
-      "m": "Con hora para las 3:30 pm, y confirmar hasta qué hora dejan entrar",
+      "m": "Hoy lunes a la 1:00 pm",
       "done": false,
       "ord": 9
     },
     {
       "id": "t11",
-      "t": "Comprar en línea la entrada del Skydeck (martes 10:30)",
+      "t": "Comprar en línea la entrada del Skydeck (hoy lunes 4:30 pm)",
       "m": "Igual: la fila de taquilla es la que quita tiempo",
       "done": false,
       "ord": 10
