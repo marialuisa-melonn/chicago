@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-15T15:09:38.572Z",
+  "updatedAt": "2026-09-15T18:48:45.691Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -475,6 +475,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu30z9af4sew",
+      "what": "Uber",
+      "amt": 12,
+      "cat": "comida",
+      "who": "María Luisa",
+      "day": "2026-09-15",
+      "fijo": false,
+      "at": 1789498123719
+    },
     {
       "id": "mu2t5h8pev7n",
       "what": "Uber acuático 2",
