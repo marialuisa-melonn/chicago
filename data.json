@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-15T00:54:12.707Z",
+  "updatedAt": "2026-09-15T01:04:31.724Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -475,6 +475,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu1yyn7didei",
+      "what": "Helado",
+      "amt": 11,
+      "cat": "comida",
+      "who": "María Luisa",
+      "day": "2026-09-14",
+      "fijo": false,
+      "at": 1789434269689
+    },
     {
       "id": "mu1yldbcy483",
       "what": "Vino",
