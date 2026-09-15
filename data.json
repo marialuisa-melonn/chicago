@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-15T00:12:16.990Z",
+  "updatedAt": "2026-09-15T00:12:19.736Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -720,7 +720,8 @@
     "d1b": true,
     "d1tour": true,
     "d2b": true,
-    "d2shedd": true
+    "d2shedd": true,
+    "d3sky": true
   },
   "decisions": {}
 }
