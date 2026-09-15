@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-15T14:49:34.107Z",
+  "updatedAt": "2026-09-15T15:08:16.582Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -475,6 +475,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu2t3q29c72s",
+      "what": "Bagels",
+      "amt": 78,
+      "cat": "comida",
+      "who": "Guli",
+      "day": "2026-09-15",
+      "fijo": false,
+      "at": 1789484895153
+    },
     {
       "id": "mu21ojdtxybg",
       "what": "Labriola",
