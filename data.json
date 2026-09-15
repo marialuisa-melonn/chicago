@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-15T14:49:08.946Z",
+  "updatedAt": "2026-09-15T14:49:19.767Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -755,6 +755,7 @@
   },
   "decisions": {
     "p-cheval": "small",
-    "p-barco": "riverwalk"
+    "p-barco": "riverwalk",
+    "p-jueves": "baba"
   }
 }
