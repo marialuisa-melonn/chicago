@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-15T14:49:19.767Z",
+  "updatedAt": "2026-09-15T14:49:32.768Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -727,14 +727,14 @@
       "id": "t10",
       "t": "Comprar en línea la entrada del Shedd Aquarium (lunes)",
       "m": "Hoy lunes a la 1:00 pm",
-      "done": false,
+      "done": true,
       "ord": 9
     },
     {
       "id": "t11",
       "t": "Comprar en línea la entrada del Skydeck (hoy lunes 4:30 pm)",
       "m": "Igual: la fila de taquilla es la que quita tiempo",
-      "done": false,
+      "done": true,
       "ord": 10
     },
     {
