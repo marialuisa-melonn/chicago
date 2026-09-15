@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-15T15:08:16.582Z",
+  "updatedAt": "2026-09-15T15:08:41.651Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -475,6 +475,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu2t49eyzta4",
+      "what": "Uber acuático",
+      "amt": 17,
+      "cat": "transporte",
+      "who": "Susi V",
+      "day": "2026-09-14",
+      "fijo": false,
+      "at": 1789484920234
+    },
     {
       "id": "mu2t3q29c72s",
       "what": "Bagels",
