@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-15T19:01:22.821Z",
+  "updatedAt": "2026-09-15T19:01:39.897Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -475,6 +475,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu31fuot09q7",
+      "what": "Uber",
+      "amt": 13,
+      "cat": "comida",
+      "who": "Susi V",
+      "day": "2026-09-15",
+      "fijo": false,
+      "at": 1789498897949
+    },
     {
       "id": "mu31fhitx55y",
       "what": "Small Cheval",
