@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-15T02:20:38.575Z",
+  "updatedAt": "2026-09-15T14:48:52.011Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -178,14 +178,14 @@
       "events": [
         {
           "id": "d3a",
-          "time": "12:30",
+          "time": "14:30",
           "slot": "Almuerzo",
           "title": "Au Cheval o Small Cheval",
           "where": "Au Cheval tiene la mejor hamburguesa de la ciudad y una fila eterna. Small Cheval es la versión rápida.",
           "status": "voto",
           "poll": "p-cheval",
           "url": "https://www.auchevalchicago.com/",
-          "map": "Au Cheval",
+          "map": "Small Cheval",
           "tag": "🍔"
         },
         {
