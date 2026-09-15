@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-15T21:14:02.093Z",
+  "updatedAt": "2026-09-15T22:50:02.549Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -475,6 +475,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu39ljmmgc8w",
+      "what": "Helado",
+      "amt": 15,
+      "cat": "comida",
+      "who": "Pepe",
+      "day": "2026-09-15",
+      "fijo": false,
+      "at": 1789512600478
+    },
     {
       "id": "mu363u887usa",
       "what": "Galletas",
