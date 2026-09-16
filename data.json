@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-16T19:34:26.144Z",
+  "updatedAt": "2026-09-16T19:35:02.193Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -855,7 +855,8 @@
     "d3sky": true,
     "d3b": true,
     "d3a": true,
-    "d3c": true
+    "d3c": true,
+    "d4a": true
   },
   "decisions": {
     "p-cheval": "small",
