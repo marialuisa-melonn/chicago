@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-16T03:05:33.834Z",
+  "updatedAt": "2026-09-16T19:34:26.144Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -453,7 +453,8 @@
           "where": "Dentro de RH Chicago, bajo la claraboya. Reserva confirmada para 7.",
           "status": "ok",
           "map": "3 Arts Club Cafe RH Chicago",
-          "tag": "🕯️"
+          "tag": "🕯️",
+          "url": ""
         },
         {
           "id": "d7b",
