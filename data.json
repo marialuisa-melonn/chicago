@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-15T22:50:36.107Z",
+  "updatedAt": "2026-09-16T03:05:33.834Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -475,6 +475,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu3iq54331ld",
+      "what": "Ema",
+      "amt": 236,
+      "cat": "comida",
+      "who": "María Luisa",
+      "day": "2026-09-15",
+      "fijo": false,
+      "at": 1789527931491
+    },
     {
       "id": "mu39m8za0jvf",
       "what": "Tavern",
