@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-17T16:45:27.596Z",
+  "updatedAt": "2026-09-17T16:46:30.637Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -476,6 +476,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu5rhqrv38xg",
+      "what": "Uber",
+      "amt": 14,
+      "cat": "transporte",
+      "who": "María Luisa",
+      "day": "2026-09-17",
+      "fijo": false,
+      "at": 1789663588555
+    },
     {
       "id": "mu5rge0iaxho",
       "what": "Desayuno",
