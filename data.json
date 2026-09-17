@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-17T16:47:57.510Z",
+  "updatedAt": "2026-09-17T19:48:14.865Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -386,13 +386,14 @@
       "events": [
         {
           "id": "d6a",
-          "time": "11:00",
+          "time": "09:00",
           "slot": "Brunch",
           "title": "The Allis · Soho House",
           "where": "Reserva confirmada para 7, con el atrio incluido. Es el brunch más bonito de la semana.",
           "status": "ok",
           "map": "The Allis Soho House Chicago",
-          "tag": "🛋️"
+          "tag": "🛋️",
+          "url": ""
         },
         {
           "id": "d6b",
