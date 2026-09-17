@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-16T20:01:36.875Z",
+  "updatedAt": "2026-09-17T00:48:22.414Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -476,6 +476,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu4t9knyf6k5",
+      "what": "Vino",
+      "amt": 145,
+      "cat": "comida",
+      "who": "Pepe",
+      "day": "2026-09-16",
+      "fijo": false,
+      "at": 1789606100447
+    },
     {
       "id": "mu4j0snxo1w1",
       "what": "Ubers",
