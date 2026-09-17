@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-17T23:21:48.122Z",
+  "updatedAt": "2026-09-17T23:22:08.734Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -477,6 +477,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu65mjakim0j",
+      "what": "Pizza",
+      "amt": 327,
+      "cat": "comida",
+      "who": "María Luisa",
+      "day": "2026-09-17",
+      "fijo": false,
+      "at": 1789687326764
+    },
     {
       "id": "mu60yrsdr1i6",
       "what": "Uber",
