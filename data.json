@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-17T02:39:40.791Z",
+  "updatedAt": "2026-09-17T02:40:04.707Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -784,16 +784,6 @@
       "who": "María Luisa",
       "at": 1789269777210,
       "day": "2026-09-12",
-      "fijo": false
-    },
-    {
-      "id": "mtxhjgwpbngu",
-      "what": "Reserva Purple Pig",
-      "amt": 70,
-      "cat": "comida",
-      "who": "María Luisa",
-      "at": 1789163143513,
-      "day": "2026-09-11",
       "fijo": false
     },
     {
