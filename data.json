@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-17T00:48:22.414Z",
+  "updatedAt": "2026-09-17T02:39:40.791Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -476,6 +476,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu4x8pqojebj",
+      "what": "Purple Pig",
+      "amt": 380,
+      "cat": "comida",
+      "who": "Pepe",
+      "day": "2026-09-16",
+      "fijo": false,
+      "at": 1789612778832
+    },
     {
       "id": "mu4t9knyf6k5",
       "what": "Vino",
