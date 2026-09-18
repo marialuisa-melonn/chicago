@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-18T22:20:18.265Z",
+  "updatedAt": "2026-09-18T22:46:59.012Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -477,6 +477,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu7jt5xczy5a",
+      "what": "Uber",
+      "amt": 21,
+      "cat": "transporte",
+      "who": "María Luisa",
+      "day": "2026-09-18",
+      "fijo": false,
+      "at": 1789771616832
+    },
     {
       "id": "mu7iuuvej1rt",
       "what": "Helado",
