@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-18T00:14:52.121Z",
+  "updatedAt": "2026-09-18T01:02:18.922Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -477,6 +477,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu697crtbzi5",
+      "what": "Jazz",
+      "amt": 160,
+      "cat": "comida",
+      "who": "María Luisa",
+      "day": "2026-09-17",
+      "fijo": false,
+      "at": 1789693336937
+    },
     {
       "id": "mu67ibmcpydk",
       "what": "Magnolia",
