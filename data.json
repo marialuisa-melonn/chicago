@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-18T21:40:51.828Z",
+  "updatedAt": "2026-09-18T21:41:14.625Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -477,6 +477,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu7hgminnd4l",
+      "what": "Cava",
+      "amt": 141,
+      "cat": "comida",
+      "who": "María Luisa",
+      "day": "2026-09-18",
+      "fijo": false,
+      "at": 1789767672575
+    },
     {
       "id": "mu7hg4xntp6n",
       "what": "Café",
