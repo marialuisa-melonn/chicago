@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-18T21:42:35.334Z",
+  "updatedAt": "2026-09-18T22:20:18.265Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -477,6 +477,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu7iuuvej1rt",
+      "what": "Helado",
+      "amt": 11,
+      "cat": "comida",
+      "who": "—",
+      "day": "2026-09-18",
+      "fijo": false,
+      "at": 1789770016202
+    },
     {
       "id": "mu7hicfsmfnr",
       "what": "Uber",
