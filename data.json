@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-18T02:13:47.357Z",
+  "updatedAt": "2026-09-18T14:30:20.655Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -477,6 +477,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu722hjer53h",
+      "what": "Uber",
+      "amt": 10,
+      "cat": "transporte",
+      "who": "—",
+      "day": "2026-09-18",
+      "fijo": false,
+      "at": 1789741818698
+    },
     {
       "id": "mu6br9ju8nry",
       "what": "Jazz",
