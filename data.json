@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "updatedAt": "2026-09-18T22:46:59.012Z",
+  "updatedAt": "2026-09-19T00:18:58.975Z",
   "cfg": {
     "budget": 12200,
     "rate": 4000,
@@ -477,6 +477,16 @@
     }
   ],
   "expenses": [
+    {
+      "id": "mu7n3himgtps",
+      "what": "Riverwalk",
+      "amt": 71,
+      "cat": "comida",
+      "who": "María Luisa",
+      "day": "2026-09-18",
+      "fijo": false,
+      "at": 1789777137262
+    },
     {
       "id": "mu7jt5xczy5a",
       "what": "Uber",
